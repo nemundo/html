@@ -2,13 +2,12 @@
 
 namespace Nemundo\Html\Document;
 
-use Nemundo\Core\File\TextFile;
+use Nemundo\Core\Http\Response\HttpResponse;
+use Nemundo\Core\Http\Response\StatusCode;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 use Nemundo\Html\Header\LibraryHeader;
 use Nemundo\Html\Header\Meta;
 use Nemundo\Html\Header\Title;
-use Nemundo\Web\Http\Response\HttpResponse;
-use Nemundo\Web\Http\Response\StatusCode;
 
 
 class HtmlDocument extends AbstractHtmlContainer
@@ -22,7 +21,7 @@ class HtmlDocument extends AbstractHtmlContainer
     /**
      * @var StatusCode
      */
-    public $statusCode = 200;  // StatusCode::OK;
+    public $statusCode = StatusCode::OK;
 
     /**
      * @var Head
@@ -114,16 +113,10 @@ class HtmlDocument extends AbstractHtmlContainer
     public function render()
     {
 
-        echo $this->getHtml();
-
-
-        /*
-        http_response_code($this->statusCode);
-
         $response = new HttpResponse();
         $response->content = $this->getHtml();
         $response->statusCode = $this->statusCode;
-        $response->sendResponse();*/
+        $response->sendResponse();
     }
 
 

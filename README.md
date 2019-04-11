@@ -8,6 +8,11 @@ Generate Html Source Code.
 composer require nemundo/html
 ```
 
+### Dev Installation
+```
+git submodule add https://github.com/nemundo/html.git lib/html
+```
+
 
 ## Example
 ```
