@@ -1,6 +1,6 @@
 <?php
 
-require '../../config.php';
+require '../../vendor/autoload.php';
 
 
 $html = new \Nemundo\Html\Document\HtmlDocument();

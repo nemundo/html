@@ -1,13 +1,7 @@
 <?php
 
-require '../../config.php';
+require '../../vendor/autoload.php';
 
-
-
-//LanguageConfig::$currentLanguageCode = LanguageCode::DE;  // LanguageCode::EN;
-// LanguageConfig::$currentLanguageCode = LanguageCode::EN;
-
-\Nemundo\Core\Language\LanguageConfig::$currentLanguageCode = \Nemundo\Core\Language\LanguageCode::EN;
 
 $html = new \Nemundo\Html\Document\HtmlDocument();
 $html->title = 'Table Example';

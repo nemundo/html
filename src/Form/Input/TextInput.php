@@ -55,11 +55,10 @@ class TextInput extends AbstractInput
     public function getHtml()
     {
 
-        $this->checkBooleanProperty('autofocus');
+        //$this->checkBooleanProperty('autofocus');
 
         $this->addAttribute('type', $this->inputType);
         $this->addAttribute('placeholder', $this->placeholder);
-        //$this->addAttribute('value','value=');  //. htmlspecialchars($this->value));
         $this->addAttribute('size', $this->size);
         $this->addAttribute('maxlength', $this->maxLength);
 
