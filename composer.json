@@ -1,6 +1,7 @@
 {
     "name": "nemundo/html",
     "description": "Html Generator",
+    "license": "MIT",
     "authors": [
         {
             "name": "Nemundo",
