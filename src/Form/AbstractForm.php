@@ -5,21 +5,20 @@ namespace Nemundo\Html\Form;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
 
-class Form extends AbstractForm  // AbstractHtmlContainer
+abstract class AbstractForm extends AbstractHtmlContainer
 {
 
     /**
      * @var string
      */
-    public $action = '';
+    protected $action = '';
 
     /**
      * @var FormMethod
      */
-    public $formMethod = FormMethod::POST;
+    protected $formMethod = FormMethod::POST;
 
 
-    /*
     public function getHtml()
     {
 
@@ -36,6 +35,6 @@ class Form extends AbstractForm  // AbstractHtmlContainer
 
         return parent::getHtml();
 
-    }*/
+    }
 
 }
