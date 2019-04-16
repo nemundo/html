@@ -22,7 +22,7 @@ abstract class AbstractHyperlink extends AbstractContentContainer
     /**
      * @var string
      */
-    protected $title;
+    //protected $title;
 
 
     public function getHtml()
@@ -33,7 +33,7 @@ abstract class AbstractHyperlink extends AbstractContentContainer
 
         $this->addAttribute('href', $this->href);
         $this->addAttribute('target', $this->target);
-        $this->addAttribute('title', $this->title);
+        //$this->addAttribute('title', $this->title);
 
         return parent::getHtml();
 

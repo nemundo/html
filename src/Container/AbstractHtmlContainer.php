@@ -15,6 +15,11 @@ abstract class AbstractHtmlContainer extends AbstractBaseClass
     public $id;
 
     /**
+     * @var string|string[]
+     */
+    public $title;
+
+    /**
      * @var bool
      */
     public $visible = true;
@@ -177,6 +182,10 @@ abstract class AbstractHtmlContainer extends AbstractBaseClass
         if ($this->visible) {
 
             $this->addAttribute('id', $this->id);
+
+            if ($this->title !== null) {
+                $this->addAttribute('title', (new Translation())->getText($this->title));
+            }
 
             $this->cssClassList = array_unique($this->cssClassList);
             if (sizeof($this->cssClassList) > 0) {
