@@ -17,6 +17,7 @@ class HtmlDocument extends AbstractHtmlContainer
      * @var string
      */
     public $title;
+    // pageTitle
 
     /**
      * @var StatusCode
