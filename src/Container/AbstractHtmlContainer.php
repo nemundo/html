@@ -56,7 +56,7 @@ abstract class AbstractHtmlContainer extends AbstractBaseClass
     /**
      * @var string
      */
-    protected $html = '';
+    private $html = '';
 
 
     public function __construct(AbstractHtmlContainer $parentContainer = null)
