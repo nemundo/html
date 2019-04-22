@@ -52,7 +52,7 @@ class FileInput extends AbstractInput
     /**
      * @return FileRequest
      */
-    public function getFileRequest()
+    /*public function getFileRequest()
     {
 
 
@@ -71,7 +71,7 @@ class FileInput extends AbstractInput
     /**
      * @return FileUpload[]
      */
-    public function getMultiFileRequest()
+    /*public function getMultiFileRequest()
     {
 
         if (!$this->multiple) {
@@ -88,6 +88,6 @@ class FileInput extends AbstractInput
     public function getValue()
     {
         (new LogMessage())->writeError('Function getValue() is not allowed in FileInput');
-    }
+    }*/
 
 }

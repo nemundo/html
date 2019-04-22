@@ -2,19 +2,6 @@
 
 require '../config.php';
 
-
-
-
-$list = new \Nemundo\Core\Http\Request\File\MultiFileRequest('file');
-
-
-foreach ($list->getFileRequestList() as $fileRequest) {
-    (new \Nemundo\Core\Debug\Debug())->write($fileRequest->filename);
-}
-
-
-
-/*
 (new \Nemundo\Core\Debug\Debug())->write($_POST);
 (new \Nemundo\Core\Debug\Debug())->write($_FILES);
 

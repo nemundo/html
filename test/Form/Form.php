@@ -34,6 +34,7 @@ $textarea->value = 'default value';
 
 $fileInput = new \Nemundo\Html\Form\Input\FileInput($form);
 $fileInput->name = 'file';
+$fileInput->multiple = true;
 
 $checkbox = new \Nemundo\Html\Form\Input\CheckBoxInput($form);
 $checkbox->name = 'checkbox';
