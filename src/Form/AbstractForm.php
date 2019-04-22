@@ -11,6 +11,11 @@ abstract class AbstractForm extends AbstractHtmlContainer
     /**
      * @var string
      */
+    public $name;
+
+    /**
+     * @var string
+     */
     protected $action = '';
 
     /**
@@ -23,10 +28,11 @@ abstract class AbstractForm extends AbstractHtmlContainer
     {
 
         $this->tagName = 'form';
-        $this->addAttribute('name', $this->id);
+        //$this->addAttribute('name', $this->id);
+        $this->addAttribute('name', $this->name);
 
         // notwendig für File Upload
-        if (strtolower($this->formMethod) == 'post') {
+        if ($this->formMethod == FormMethod::POST) {
             $this->addAttribute('enctype', 'multipart/form-data');
         }
 

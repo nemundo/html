@@ -8,11 +8,14 @@ $html->title = 'Form Example';
 
 $form = new \Nemundo\Html\Form\Form($html);
 $form->action = 'FormSubmit.php';
+$form->id = 'bla';
+//$form->formMethod = \Nemundo\Html\Form\FormMethod::GET;
 
-/*
+
 $input = new \Nemundo\Html\Form\Input\TextInput($form);
 $input->name = 'input1';
 $input->placeholder = 'Input 1';
+$input->value = 'hello world';
 
 $select = new \Nemundo\Html\Form\Select\Select($form);
 
@@ -30,7 +33,7 @@ $textarea->name = 'textarea';
 $textarea->value = 'default value';
 
 $fileInput = new \Nemundo\Html\Form\Input\FileInput($form);
-$fileInput->name = 'file';*/
+$fileInput->name = 'file';
 
 $checkbox = new \Nemundo\Html\Form\Input\CheckBoxInput($form);
 $checkbox->name = 'checkbox';
