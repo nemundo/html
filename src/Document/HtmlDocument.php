@@ -35,6 +35,12 @@ class HtmlDocument extends AbstractHtmlContainer
     protected $body;
 
 
+    public function __construct()
+    {
+        parent::__construct(null);
+    }
+
+
     protected function loadContainer()
     {
 
