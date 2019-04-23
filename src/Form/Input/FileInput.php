@@ -2,11 +2,6 @@
 
 namespace Nemundo\Html\Form\Input;
 
-use Nemundo\Core\Log\LogMessage;
-use Nemundo\Web\Http\FileRequest\FileRequest;
-use Nemundo\Web\Http\FileRequest\FileUpload;
-use Nemundo\Web\Http\FileRequest\MultiFileRequest;
-
 
 class FileInput extends AbstractInput
 {
@@ -30,9 +25,6 @@ class FileInput extends AbstractInput
     public function getHtml()
     {
 
-        //$this->tagName = 'input';
-        //$this->renderClosingTag = false;
-
         if ($this->multiple) {
             $this->name = $this->name . '[]';
         }
@@ -47,47 +39,5 @@ class FileInput extends AbstractInput
         return parent::getHtml();
 
     }
-
-
-    /**
-     * @return FileRequest
-     */
-    /*public function getFileRequest()
-    {
-
-
-        if ($this->multiple) {
-            (new LogMessage())->writeError('Multi Upload. Please use getMultiFileRequest()');
-            exit;
-        }
-
-        $fileRequest = new FileRequest($this->name);
-
-        return $fileRequest;
-
-    }
-
-
-    /**
-     * @return FileUpload[]
-     */
-    /*public function getMultiFileRequest()
-    {
-
-        if (!$this->multiple) {
-            (new LogMessage())->writeError('Multi Upload. Please use getMultiFileRequest()');
-        }
-
-        $multiFileRequest = new MultiFileRequest($this->name);
-
-        return $multiFileRequest->getUploadFile();
-
-    }
-
-
-    public function getValue()
-    {
-        (new LogMessage())->writeError('Function getValue() is not allowed in FileInput');
-    }*/
 
 }
