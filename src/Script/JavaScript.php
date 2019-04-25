@@ -24,7 +24,7 @@ class JavaScript extends AbstractHtmlContainer
         return $this;
     }
 
-
+/*
     public function addCode(AbstractJavaScriptCode $code) {
 
 
@@ -33,7 +33,7 @@ class JavaScript extends AbstractHtmlContainer
         }
 
 
-    }
+    }*/
 
 
     public function getHtml()
