@@ -2,11 +2,12 @@
 
 namespace Nemundo\Html\Container;
 
+
 use Nemundo\Core\Base\AbstractBaseClass;
 use Nemundo\Core\Language\Translation;
 
 
-abstract class AbstractHtmlContainer extends AbstractBaseClass
+abstract class AbstractHtmlContainer extends AbstractContainer  // AbstractBaseClass
 {
 
     /**
@@ -59,6 +60,7 @@ abstract class AbstractHtmlContainer extends AbstractBaseClass
     private $html = '';
 
 
+    /*
     public function __construct(AbstractHtmlContainer $parentContainer = null)
     {
 
@@ -68,9 +70,9 @@ abstract class AbstractHtmlContainer extends AbstractBaseClass
 
         $this->loadContainer();
 
-    }
+    }*/
 
-
+/*
     protected function loadContainer()
     {
 
@@ -81,14 +83,15 @@ abstract class AbstractHtmlContainer extends AbstractBaseClass
     {
         $this->containerList[] = $container;
         return $this;
-    }
+    }*/
 
 
+/*
     public function getContainerList($recursive = false)
     {
 
         /** @var AbstractHtmlContainer[] $containerList */
-        $containerList = [];
+     /*   $containerList = [];
 
         foreach ($this->containerList as $container) {
 
@@ -102,7 +105,7 @@ abstract class AbstractHtmlContainer extends AbstractBaseClass
 
         return $containerList;
 
-    }
+    }*/
 
 
     public function addCssClass($cssClass)
@@ -215,6 +218,8 @@ abstract class AbstractHtmlContainer extends AbstractBaseClass
             $html .= PHP_EOL;
 
         }
+
+        $html = trim($html);
 
         return $html;
 

@@ -4,6 +4,7 @@ namespace Nemundo\Html\Document;
 
 use Nemundo\Core\Http\Response\HttpResponse;
 use Nemundo\Core\Http\Response\StatusCode;
+use Nemundo\Html\Container\AbstractContainer;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 use Nemundo\Html\Header\LibraryHeader;
 use Nemundo\Html\Header\Meta;
@@ -55,7 +56,7 @@ class HtmlDocument extends AbstractHtmlContainer
     }
 
 
-    public function addContainer(AbstractHtmlContainer $container)
+    public function addContainer(AbstractContainer $container)
     {
 
         $this->body->addContainer($container);
