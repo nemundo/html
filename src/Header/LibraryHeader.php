@@ -128,7 +128,7 @@ class LibraryHeader extends AbstractHtmlContainer
         if (count(LibraryHeader::$jsList) > 0) {
             $style = new JavaScript($this);
             foreach (LibraryHeader::$jsList as $value) {
-                $style->addScript($value);
+                $style->addCodeLine($value);
             }
         }
 

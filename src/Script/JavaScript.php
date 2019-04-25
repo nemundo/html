@@ -15,9 +15,12 @@ class JavaScript extends AbstractHtmlContainer
      */
     public $src;
 
-    public function addScript($script)
+
+
+    // addLine
+    public function addCodeLine($line)
     {
-        $this->addHtml($script);
+        $this->addHtml($line);
         return $this;
     }
 
@@ -26,7 +29,7 @@ class JavaScript extends AbstractHtmlContainer
 
 
         foreach ($code->getCode() as $line) {
-            $this->addScript($line);
+            $this->addCodeLine($line);
         }
 
 
