@@ -2,13 +2,16 @@
 
 namespace Nemundo\Html\Document;
 
+use Nemundo\Com\JavaScript\Code\AbstractJavaScriptCode;
 use Nemundo\Core\Http\Response\HttpResponse;
 use Nemundo\Core\Http\Response\StatusCode;
 use Nemundo\Html\Container\AbstractContainer;
 use Nemundo\Html\Container\AbstractHtmlContainer;
+use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 use Nemundo\Html\Header\LibraryHeader;
 use Nemundo\Html\Header\Meta;
 use Nemundo\Html\Header\Title;
+use Nemundo\Html\Script\JavaScript;
 
 
 class HtmlDocument extends AbstractHtmlContainer
@@ -35,6 +38,11 @@ class HtmlDocument extends AbstractHtmlContainer
      */
     protected $body;
 
+    /**
+     * @var JavaScript
+     */
+    protected $script;
+
 
     public function __construct()
     {
@@ -49,6 +57,7 @@ class HtmlDocument extends AbstractHtmlContainer
 
         $this->head = new Head();
         $this->body = new Body();
+        $this->script = new JavaScript();
 
         $library = new LibraryHeader();
         $this->addHeaderContainer($library);
@@ -59,7 +68,23 @@ class HtmlDocument extends AbstractHtmlContainer
     public function addContainer(AbstractContainer $container)
     {
 
+        $default = true;
+
+        if ($container->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
+            $this->addHeaderContainer($container);
+        $default=false;
+        }
+
+        if ($container->isObjectOfClass(AbstractJavaScriptCode::class)) {
+            $this->script->addContainer($container);
+            $default=false;
+        }
+
+        if ($default) {
         $this->body->addContainer($container);
+        }
+
+
 
     }
 
@@ -103,6 +128,11 @@ class HtmlDocument extends AbstractHtmlContainer
 
         $this->addHtml('<!DOCTYPE html>');
 
+        // check ob vorhanden
+        if ($this->script->hasChild()) {
+        $this->head->addContainer($this->script);
+        }
+
         // muss vor Header ausgelesen werden
         $htmlBody = $this->body->getHtml();
 
@@ -125,6 +155,7 @@ class HtmlDocument extends AbstractHtmlContainer
         $response->content = $this->getHtml();
         $response->statusCode = $this->statusCode;
         $response->sendResponse();
+
     }
 
 

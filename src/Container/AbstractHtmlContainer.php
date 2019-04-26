@@ -219,7 +219,7 @@ abstract class AbstractHtmlContainer extends AbstractContainer  // AbstractBaseC
 
         }
 
-        $html = trim($html);
+        //$html = trim($html);
 
         return $html;
 

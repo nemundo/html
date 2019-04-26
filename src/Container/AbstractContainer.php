@@ -3,7 +3,6 @@
 namespace Nemundo\Html\Container;
 
 use Nemundo\Core\Base\AbstractBaseClass;
-use Nemundo\Core\Language\Translation;
 
 
 abstract class AbstractContainer extends AbstractBaseClass
@@ -38,10 +37,15 @@ abstract class AbstractContainer extends AbstractBaseClass
     }
 
 
+    // protected
+    // für Html public
+    // für Code
     public function addContainer(AbstractContainer $container)
     {
+
         $this->containerList[] = $container;
         return $this;
+
     }
 
 
@@ -66,6 +70,21 @@ abstract class AbstractContainer extends AbstractBaseClass
     }
 
 
+    public function hasChild()
+    {
+
+        $value = false;
+        if (sizeof($this->containerList) > 0) {
+            $value = true;
+        }
+
+        return $value;
+
+
+    }
+
+
+    // getContent
     public function getHtml()
     {
 
@@ -81,7 +100,7 @@ abstract class AbstractContainer extends AbstractBaseClass
 
         $html .= PHP_EOL;
 
-        $html = trim($html);
+        //$html = trim($html);
 
         return $html;
 
