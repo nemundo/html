@@ -7,50 +7,30 @@ use Nemundo\Core\Base\AbstractBaseClass;
 use Nemundo\Core\Language\Translation;
 
 
-abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractContainer
+abstract class AbstractTagContainer extends AbstractContainer
 {
 
     /**
      * @var string
      */
-    public $id;
-
-    /**
-     * @var string|string[]
-     */
-    public $title;
+    protected $tagName;
 
     /**
      * @var bool
      */
-    public $visible = true;
-
-    /**
-     * @var string[]
-     */
-    protected $cssClassList = [];
-
-    /**
-     * @var string
-     */
-    //protected $tagName;
+    protected $renderClosingTag = true;
 
     /**
      * @var bool
      */
-    //protected $renderClosingTag = true;
+    protected $returnOneLine = false;
+
+    private $attributeList = [];
+
+    private $attributeWithoutValue = [];
 
     /**
-     * @var bool
-     */
-    //protected $returnOneLine = false;
-
-    //private $attributeList = [];
-
-    //private $attributeWithoutValue = array();
-
-    /**
-     * @var AbstractHtmlContainer[]
+     * @var AbstractTagContainer[]
      */
     protected $containerList = [];
 
@@ -60,17 +40,8 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractCo
     private $html = '';
 
 
-    public function addCssClass($cssClass)
-    {
 
-        $this->cssClassList[] = $cssClass;
-        return $this;
-
-    }
-
-
-    /*
-    public function addAttribute($attribute, $value)
+    protected function addAttribute($attribute, $value)
     {
 
         if ($value !== null) {
@@ -127,36 +98,28 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractCo
         $html = '</' . $this->tagName . '>' . PHP_EOL;
         return $html;
 
-    }*/
+    }
 
 
+    // getContent
     public function getHtml()
     {
 
         $html = '';
 
-        if ($this->visible) {
-
-            $this->addAttribute('id', $this->id);
-
-            if ($this->title !== null) {
-                $this->addAttribute('title', (new Translation())->getText($this->title));
-            }
-
-            $this->cssClassList = array_unique($this->cssClassList);
-            if (sizeof($this->cssClassList) > 0) {
-                $this->addAttribute('class', join(' ', $this->cssClassList));
-            }
 
             if ($this->tagName !== null) {
                 $html = $this->getOpeningTag();
             }
 
-            $html .= $this->html;
+            //$html .= $this->html;
 
-            foreach ($this->getContainerList() as $com) {
+            $html .= parent::getHtml();
+
+
+            /*foreach ($this->getContainerList() as $com) {
                 $html .= $com->getHtml();
-            }
+            }*/
 
             if ($this->tagName !== null) {
                 if ($this->renderClosingTag) {
@@ -170,26 +133,18 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractCo
 
             $html .= PHP_EOL;
 
-        }
-
-        //$html = trim($html);
-
         return $html;
 
     }
 
 
+    /*
     protected function addHtml($html)
     {
 
-        $text = $html;
-        if (is_array($html)) {
-            $text = (new Translation())->getText($html);
-        }
-
-        $this->html .= $text . PHP_EOL;
+        $this->html .= $conttext . PHP_EOL;
         return $this;
 
-    }
+    }*/
 
 }

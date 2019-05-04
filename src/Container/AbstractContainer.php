@@ -90,7 +90,6 @@ abstract class AbstractContainer extends AbstractBaseClass
 
         $html = '';
 
-
         $html .= $this->html;
 
         foreach ($this->getContainerList() as $com) {
@@ -109,12 +108,6 @@ abstract class AbstractContainer extends AbstractBaseClass
 
     protected function addHtml($html)
     {
-
-        /*
-        $text = $html;
-        if (is_array($html)) {
-            $text = (new Translation())->getText($html);
-        }*/
 
         $this->html .= $html . PHP_EOL;
         return $this;
