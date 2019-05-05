@@ -3,21 +3,18 @@
 namespace Nemundo\Html\Block;
 
 
-use Nemundo\Com\Container\ContentTrait;
+use Nemundo\Html\Container\AbstractContentContainer;
 
-class ContentDiv extends Div
+class ContentDiv extends AbstractContentContainer
 {
-
-    use ContentTrait;
 
     public function getContent()
     {
 
+        $this->tagName = 'div';
         $this->returnOneLine = true;
-        $this->addContent($this->getContent());
         return parent::getContent();
 
     }
-
 
 }

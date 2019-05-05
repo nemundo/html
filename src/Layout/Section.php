@@ -3,18 +3,14 @@
 namespace Nemundo\Com\Html\Structure;
 
 
-use Nemundo\Html\Container\AbstractHtmlContainer;
-use Nemundo\Com\Container\ContentTrait;
+use Nemundo\Html\Container\AbstractContentContainer;
 
-class Section extends AbstractHtmlContainer
+class Section extends AbstractContentContainer
 {
-
-    use ContentTrait;
 
     public function getContent()
     {
         $this->tagName = 'section';
-        $this->addContent($this->getContent());
         return parent::getContent();
     }
 
