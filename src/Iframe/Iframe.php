@@ -29,7 +29,7 @@ class Iframe extends AbstractHtmlContainer
     public $frameborder = 0;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'iframe';
@@ -38,7 +38,7 @@ class Iframe extends AbstractHtmlContainer
         $this->addAttribute('height', $this->height);
         $this->addAttribute('frameborder', $this->frameborder);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

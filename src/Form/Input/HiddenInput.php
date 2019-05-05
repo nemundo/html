@@ -6,12 +6,12 @@ namespace Nemundo\Html\Form\Input;
 class HiddenInput extends AbstractInput
 {
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->addAttribute('type', 'hidden');
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

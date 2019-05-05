@@ -20,19 +20,19 @@ class JavaScript extends AbstractHtmlContainer
     // addHtml
     public function addCodeLine($line)
     {
-        $this->addHtml($line);
+        $this->addContent($line);
         return $this;
     }
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'script';
         $this->addAttribute('type', 'text/javascript');
         $this->addAttribute('src', $this->src);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

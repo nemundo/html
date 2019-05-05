@@ -10,12 +10,12 @@ class ContentDiv extends Div
 
     use ContentTrait;
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->returnOneLine = true;
-        $this->addHtml($this->getContent());
-        return parent::getHtml();
+        $this->addContent($this->getContent());
+        return parent::getContent();
 
     }
 

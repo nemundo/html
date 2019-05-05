@@ -10,13 +10,13 @@ class Label extends AbstractContentContainer
 
     public $for;
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'label';
         $this->addAttribute('for', $this->for);
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

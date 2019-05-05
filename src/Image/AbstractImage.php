@@ -29,7 +29,7 @@ abstract class AbstractImage extends AbstractHtmlContainer
      */
     protected $alt;
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'img';
@@ -40,7 +40,7 @@ abstract class AbstractImage extends AbstractHtmlContainer
         $this->addAttribute('src', $this->src);
         $this->addAttribute('alt', $this->alt);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

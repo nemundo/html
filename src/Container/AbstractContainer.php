@@ -16,7 +16,7 @@ abstract class AbstractContainer extends AbstractBaseClass
     /**
      * @var string
      */
-    private $html = '';
+    private $content = '';
 
 
     public function __construct(AbstractContainer $parentContainer = null)
@@ -37,9 +37,6 @@ abstract class AbstractContainer extends AbstractBaseClass
     }
 
 
-    // protected
-    // für Html public
-    // für Code
     public function addContainer(AbstractContainer $container)
     {
 
@@ -85,15 +82,15 @@ abstract class AbstractContainer extends AbstractBaseClass
 
 
     // getContent
-    public function getHtml()
+    public function getContent()
     {
 
         $html = '';
 
-        $html .= $this->html;
+        $html .= $this->content;
 
         foreach ($this->getContainerList() as $com) {
-            $html .= $com->getHtml();
+            $html .= $com->getContent();
         }
 
 
@@ -106,10 +103,10 @@ abstract class AbstractContainer extends AbstractBaseClass
     }
 
 
-    protected function addHtml($html)
+    protected function addContent($content)
     {
 
-        $this->html .= $html . PHP_EOL;
+        $this->content .= $content . PHP_EOL;
         return $this;
 
     }

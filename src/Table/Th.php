@@ -21,7 +21,7 @@ class Th extends AbstractContentContainer
     }
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'th';
@@ -33,7 +33,7 @@ class Th extends AbstractContentContainer
             $this->addAttributeWithoutValue('nowrap');
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

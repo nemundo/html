@@ -22,7 +22,7 @@ class FileInput extends AbstractInput
 //<input type="file" accept="image/*" capture="camera" />
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         if ($this->multiple) {
@@ -36,7 +36,7 @@ class FileInput extends AbstractInput
             $this->addAttributeWithoutValue('multiple');
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

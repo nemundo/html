@@ -7,12 +7,12 @@ namespace Nemundo\Html\Form\Input;
 class CheckBoxInput extends AbstractYesNo
 {
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->addAttribute('type','checkbox');
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

@@ -13,13 +13,13 @@ class Meta extends AbstractHeaderHtmlContainer
     }
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'meta';
         $this->renderClosingTag = false;
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

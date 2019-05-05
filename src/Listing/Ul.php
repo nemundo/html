@@ -7,10 +7,10 @@ namespace Nemundo\Html\Listing;
 class Ul extends AbstractListContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'ul';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

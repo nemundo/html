@@ -23,12 +23,12 @@ class Time extends AbstractContentContainer
 
     }
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->addAttribute('datetime', $this->dateTime->getIsoDateFormat());
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

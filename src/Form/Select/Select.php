@@ -20,7 +20,7 @@ class Select extends AbstractFormItem
     public $multiple = false;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'select';
@@ -35,7 +35,7 @@ class Select extends AbstractFormItem
             //$this->addAttribute('size', '10');
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

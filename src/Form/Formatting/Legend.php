@@ -8,10 +8,10 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Legend extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'legend';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

@@ -10,10 +10,10 @@ class Header extends AbstractHtmlContainer
 {
 
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'header';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

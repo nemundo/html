@@ -20,17 +20,17 @@ class Button extends AbstractHtmlContainer
 
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'button';
-        $this->addHtml($this->label);
+        $this->addContent($this->label);
 
         if ($this->disabled) {
             $this->addAttributeWithoutValue('disabled');
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

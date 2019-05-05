@@ -10,10 +10,10 @@ class Footer extends AbstractHtmlContainer
 {
 
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'footer';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

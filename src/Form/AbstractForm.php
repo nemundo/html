@@ -24,7 +24,7 @@ abstract class AbstractForm extends AbstractHtmlContainer
     protected $formMethod = FormMethod::POST;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'form';
@@ -39,7 +39,7 @@ abstract class AbstractForm extends AbstractHtmlContainer
         $this->addAttribute('action', $this->action);
         $this->addAttribute('method', $this->formMethod);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

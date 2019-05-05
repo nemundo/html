@@ -7,10 +7,10 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Small extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'small';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 

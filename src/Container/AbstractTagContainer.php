@@ -37,7 +37,7 @@ abstract class AbstractTagContainer extends AbstractContainer
     /**
      * @var string
      */
-    private $html = '';
+    private $content = '';
 
 
 
@@ -102,7 +102,7 @@ abstract class AbstractTagContainer extends AbstractContainer
 
 
     // getContent
-    public function getHtml()
+    public function getContent()
     {
 
         $html = '';
@@ -114,7 +114,7 @@ abstract class AbstractTagContainer extends AbstractContainer
 
             //$html .= $this->html;
 
-            $html .= parent::getHtml();
+            $html .= parent::getContent();
 
 
             /*foreach ($this->getContainerList() as $com) {

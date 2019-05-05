@@ -7,12 +7,12 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Del extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'del';
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 

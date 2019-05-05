@@ -16,7 +16,7 @@ class StylesheetLink extends AbstractHtmlContainer
     public $media;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'link';
@@ -28,7 +28,7 @@ class StylesheetLink extends AbstractHtmlContainer
             $this->addAttribute('media', $this->media);
         }
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

@@ -44,7 +44,7 @@ class Textarea extends AbstractFormItem
     //public $value;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->returnOneLine = true;
@@ -70,9 +70,9 @@ class Textarea extends AbstractFormItem
         }
 
         // korrekt wäre content!!!
-        $this->addHtml($this->value);
+        $this->addContent($this->value);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

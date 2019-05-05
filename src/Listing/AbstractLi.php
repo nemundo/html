@@ -10,10 +10,10 @@ abstract class AbstractLi extends AbstractHtmlContainer
 {
 
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'li';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

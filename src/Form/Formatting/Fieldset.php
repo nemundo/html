@@ -8,10 +8,10 @@ use Nemundo\Html\Container\AbstractHtmlContainer;
 class Fieldset extends AbstractHtmlContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'fieldset';
-        parent::getHtml();
+        parent::getContent();
     }
 
 }

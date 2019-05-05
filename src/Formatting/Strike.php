@@ -7,10 +7,10 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Strike extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'strike';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

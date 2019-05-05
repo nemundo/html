@@ -8,13 +8,13 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Title extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'title';
         $this->returnOneLine = true;
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

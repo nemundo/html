@@ -13,13 +13,13 @@ class AbstractContentContainer extends AbstractHtmlContainer
      */
     public $content;
 
-    public function getHtml()
+    public function getContent()
     {
 
         $content = (new Translation())->getText($this->content);
-        $this->addHtml($content);
+        $this->addContent($content);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

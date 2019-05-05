@@ -3,12 +3,13 @@
 namespace Nemundo\Html\Container;
 
 
-class HtmlContainer extends AbstractHtmlContainer
+class Container extends AbstractContainer
 {
+
 
     public function addContent($content)
     {
-        parent::addContent($content);
+        return parent::addContent($content);
     }
 
 }

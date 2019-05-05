@@ -13,12 +13,12 @@ class Caption extends AbstractHtmlContainer
      */
     public $caption;
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'caption';
         $this->returnOneLine = true;
-        $this->addHtml($this->caption);
-        return parent::getHtml();
+        $this->addContent($this->caption);
+        return parent::getContent();
     }
 
 }

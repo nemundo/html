@@ -87,7 +87,7 @@ class LibraryHeader extends AbstractHtmlContainer
     }
 
 
-    public function getHtml()
+    public function getContent()
     {
 
 
@@ -137,7 +137,7 @@ class LibraryHeader extends AbstractHtmlContainer
             $this->addContainer($container);
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

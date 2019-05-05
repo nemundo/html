@@ -7,10 +7,10 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Underline extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'u';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 

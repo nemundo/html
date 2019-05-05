@@ -8,10 +8,10 @@ use Nemundo\Html\Container\AbstractHtmlContainer;
 class Tbody extends AbstractHtmlContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'tbody';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

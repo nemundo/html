@@ -35,7 +35,7 @@ abstract class AbstractTable extends AbstractHtmlContainer
     public $width;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'table';
@@ -48,10 +48,10 @@ abstract class AbstractTable extends AbstractHtmlContainer
 
         if ($this->caption !== null) {
             $caption = new Caption($this);
-            $caption->addHtml($this->caption);
+            $caption->addContent($this->caption);
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

@@ -7,10 +7,10 @@ namespace Nemundo\Html\Listing;
 class Ol extends AbstractListContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'ol';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

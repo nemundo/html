@@ -10,7 +10,7 @@ class Li extends AbstractContentContainer
 {
 
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'li';
         $this->returnOneLine = true;
@@ -19,7 +19,7 @@ class Li extends AbstractContentContainer
             $this->contentContainer->addHtml($this->content);
         }*/
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

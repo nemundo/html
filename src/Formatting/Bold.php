@@ -7,10 +7,10 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Bold extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'b';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 

@@ -18,7 +18,7 @@ class AudioPlayer extends AbstractHtmlContainer
      */
     public $src;
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'audio';
@@ -29,9 +29,9 @@ class AudioPlayer extends AbstractHtmlContainer
         $source->src = $this->src;
         $source->type = 'audio/mpeg';
 
-        $this->addHtml('Your browser does not support the audio element.');
+        $this->addContent('Your browser does not support the audio element.');
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

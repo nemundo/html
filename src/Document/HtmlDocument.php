@@ -115,7 +115,7 @@ class HtmlDocument extends AbstractHtmlContainer
     }
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $title = new Title();
@@ -126,7 +126,7 @@ class HtmlDocument extends AbstractHtmlContainer
         $meta->addAttribute('charset', 'UTF-8');
         $this->addHeaderContainer($meta);
 
-        $this->addHtml('<!DOCTYPE html>');
+        $this->addContent('<!DOCTYPE html>');
 
         // check ob vorhanden
         if ($this->script->hasChild()) {
@@ -134,16 +134,16 @@ class HtmlDocument extends AbstractHtmlContainer
         }
 
         // muss vor Header ausgelesen werden
-        $htmlBody = $this->body->getHtml();
+        $htmlBody = $this->body->getContent();
 
         $html = new Html();
 
-        $html->addHtml($this->head->getHtml());
-        $html->addHtml($htmlBody);
+        $html->addContent($this->head->getContent());
+        $html->addContent($htmlBody);
 
         parent::addContainer($html);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 
@@ -152,7 +152,7 @@ class HtmlDocument extends AbstractHtmlContainer
     {
 
         $response = new HttpResponse();
-        $response->content = $this->getHtml();
+        $response->content = $this->getContent();
         $response->statusCode = $this->statusCode;
         $response->sendResponse();
 

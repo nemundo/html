@@ -57,7 +57,7 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractCo
     /**
      * @var string
      */
-    private $html = '';
+    private $content = '';
 
 
     public function addCssClass($cssClass)
@@ -130,7 +130,7 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractCo
     }*/
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $html = '';
@@ -152,10 +152,10 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractCo
                 $html = $this->getOpeningTag();
             }
 
-            $html .= $this->html;
+            $html .= $this->content;
 
             foreach ($this->getContainerList() as $com) {
-                $html .= $com->getHtml();
+                $html .= $com->getContent();
             }
 
             if ($this->tagName !== null) {
@@ -179,15 +179,15 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractCo
     }
 
 
-    protected function addHtml($html)
+    protected function addContent($content)
     {
 
-        $text = $html;
-        if (is_array($html)) {
-            $text = (new Translation())->getText($html);
+        $text = $content;
+        if (is_array($content)) {
+            $text = (new Translation())->getText($content);
         }
 
-        $this->html .= $text . PHP_EOL;
+        $this->content .= $text . PHP_EOL;
         return $this;
 
     }

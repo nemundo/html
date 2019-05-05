@@ -19,14 +19,14 @@ abstract class AbstractInput extends AbstractFormItem
     public $value;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'input';
         $this->renderClosingTag = false;
         $this->addAttribute('value', htmlspecialchars($this->value));
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

@@ -6,12 +6,12 @@ namespace Nemundo\Html\Form\Input;
 class RadioInput extends AbstractYesNo
 {
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->addAttribute('type','radio');
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

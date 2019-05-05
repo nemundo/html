@@ -25,14 +25,14 @@ class SubmitButton extends Button
         $this->label = 'Submit';
     }
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->addAttribute('type', 'submit');
         $this->addAttribute('name', $this->name);
         $this->addAttribute('value', (new Translation())->getText($this->value));
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

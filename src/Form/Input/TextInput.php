@@ -52,7 +52,7 @@ class TextInput extends AbstractInput
     public $inputType = InputType::TEXT;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         //$this->checkBooleanProperty('autofocus');
@@ -83,7 +83,7 @@ class TextInput extends AbstractInput
             $this->addAttributeWithoutValue('required');
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

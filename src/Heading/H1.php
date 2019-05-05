@@ -9,10 +9,10 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class H1 extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'h1';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

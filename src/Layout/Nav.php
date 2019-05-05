@@ -8,10 +8,10 @@ use Nemundo\Html\Container\AbstractHtmlContainer;
 class Nav extends AbstractHtmlContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'nav';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

@@ -17,7 +17,7 @@ class Option extends AbstractOptgroupOption
     public $selected = false;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'option';
@@ -28,9 +28,9 @@ class Option extends AbstractOptgroupOption
             $this->addAttributeWithoutValue('selected');
         }
 
-        $this->addHtml($this->label);
+        $this->addContent($this->label);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

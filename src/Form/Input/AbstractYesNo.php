@@ -17,7 +17,7 @@ abstract class AbstractYesNo extends AbstractInput
     protected $inputType;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         if ($this->checked) {
@@ -26,7 +26,7 @@ abstract class AbstractYesNo extends AbstractInput
 
         $this->addAttribute('value', $this->value);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

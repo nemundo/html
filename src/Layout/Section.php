@@ -11,11 +11,11 @@ class Section extends AbstractHtmlContainer
 
     use ContentTrait;
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'section';
-        $this->addHtml($this->getContent());
-        return parent::getHtml();
+        $this->addContent($this->getContent());
+        return parent::getContent();
     }
 
 }

@@ -11,7 +11,7 @@ class Favicon extends AbstractHeaderHtmlContainer
      */
     public $href;
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'link';
@@ -20,7 +20,7 @@ class Favicon extends AbstractHeaderHtmlContainer
         $this->addAttribute('type', 'image/x-icon');
         $this->addAttribute('href', $this->href);
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

@@ -25,7 +25,7 @@ abstract class AbstractHyperlink extends AbstractContentContainer
     //protected $title;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'a';
@@ -35,7 +35,7 @@ abstract class AbstractHyperlink extends AbstractContentContainer
         $this->addAttribute('target', $this->target);
         //$this->addAttribute('title', $this->title);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

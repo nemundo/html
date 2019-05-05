@@ -19,10 +19,10 @@ abstract class AbstractFormItem extends AbstractHtmlContainer
     public $value;
 
 
-    public function getHtml()
+    public function getContent()
     {
         $this->addAttribute('name', $this->name);
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

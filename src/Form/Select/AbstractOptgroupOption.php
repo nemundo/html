@@ -19,14 +19,14 @@ abstract class AbstractOptgroupOption extends AbstractHtmlContainer
     public $disabled = false;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         if ($this->disabled) {
             $this->addAttributeWithoutValue('disabled');
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

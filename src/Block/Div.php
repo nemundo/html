@@ -7,10 +7,10 @@ use Nemundo\Html\Container\AbstractHtmlContainer;
 class Div extends AbstractHtmlContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'div';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 

@@ -7,10 +7,10 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Strong extends AbstractContentContainer
 {
 
-    public function getHtml()
+    public function getContent()
     {
         $this->tagName = 'strong';
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 

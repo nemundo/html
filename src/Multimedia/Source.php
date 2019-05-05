@@ -21,7 +21,7 @@ class Source extends AbstractHtmlContainer
     public $type;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName='source';
@@ -29,7 +29,7 @@ class Source extends AbstractHtmlContainer
         $this->addAttribute('src',$this->src);
         $this->addAttribute('type',$this->type);
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

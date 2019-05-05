@@ -13,14 +13,14 @@ class JavaScriptHeader extends AbstractHtmlContainer
     public $src;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'script';
         $this->returnOneLine = true;
         $this->addAttribute('src', $this->src);
 
-        return parent::getHtml();
+        return parent::getContent();
     }
 
 }

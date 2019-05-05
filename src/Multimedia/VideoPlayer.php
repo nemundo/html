@@ -26,7 +26,7 @@ class VideoPlayer extends AbstractHtmlContainer
     public $height;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         // Responsive Video
@@ -44,9 +44,9 @@ class VideoPlayer extends AbstractHtmlContainer
         $source->type = 'video/mp4';
         // " type="video/ogg">
         //$this->addHtml('<source src="' . $this->src . '" type="video/mp4">');
-        $this->addHtml('Your browser does not support the video tag.');
+        $this->addContent('Your browser does not support the video tag.');
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 

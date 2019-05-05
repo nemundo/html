@@ -24,7 +24,7 @@ class Td extends AbstractContentContainer
     public $width;
 
 
-    public function getHtml()
+    public function getContent()
     {
 
         $this->tagName = 'td';
@@ -40,7 +40,7 @@ class Td extends AbstractContentContainer
             $this->addAttributeWithoutValue('nowrap');
         }
 
-        return parent::getHtml();
+        return parent::getContent();
 
     }
 
