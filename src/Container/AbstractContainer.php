@@ -46,6 +46,16 @@ abstract class AbstractContainer extends AbstractBaseClass
     }
 
 
+    public function addContainerAtFirst(AbstractContainer $container)
+    {
+
+        array_unshift($this->containerList, $container);
+        return $this;
+
+    }
+
+
+
     public function getContainerList($recursive = false)
     {
 

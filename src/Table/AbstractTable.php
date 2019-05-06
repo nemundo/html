@@ -40,15 +40,17 @@ abstract class AbstractTable extends AbstractHtmlContainer
 
         $this->tagName = 'table';
 
-        //$this->addAttribute('class', $this->cssClass);
         $this->addAttribute('border', $this->border);
         $this->addAttribute('width', $this->width);
         $this->addAttribute('cellspacing', $this->cellSpacing);
         $this->addAttribute('cellpadding', $this->cellPadding);
 
         if ($this->caption !== null) {
-            $caption = new Caption($this);
+            $caption = new Caption();  //$this);
             $caption->addContent($this->caption);
+
+            $this->addContainerAtFirst($caption);
+
         }
 
         return parent::getContent();
