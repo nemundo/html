@@ -9,7 +9,7 @@ $html->title = 'Form Example';
 $form = new \Nemundo\Html\Form\Form($html);
 $form->action = 'FormSubmit.php';
 $form->id = 'bla';
-//$form->formMethod = \Nemundo\Html\Form\FormMethod::GET;
+$form->formMethod = \Nemundo\Html\Form\FormMethod::GET;
 
 
 $input = new \Nemundo\Html\Form\Input\TextInput($form);
