@@ -16,6 +16,8 @@ class AbstractContentContainer extends AbstractHtmlContainer
     public function getContent()
     {
 
+        $this->returnOneLine = true;
+
         $content = (new Translation())->getText($this->content);
         $this->addContent($content);
 
