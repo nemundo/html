@@ -3,8 +3,17 @@
 require '../config.php';
 
 
+(new \Nemundo\Core\Debug\Debug())->write($_POST);
+
+$request = new \Nemundo\Core\Http\Request\File\FileRequest('file');
 
 
+(new \Nemundo\Core\Debug\Debug())->write($request->hasValue());
+(new \Nemundo\Core\Debug\Debug())->write($request->filename);
+
+
+
+/*
 $list = new \Nemundo\Core\Http\Request\File\MultiFileRequest('file');
 
 

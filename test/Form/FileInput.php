@@ -17,8 +17,11 @@ $request = new \Nemundo\Core\Http\Request\Post\PostRequest('input1');
 $request = new \Nemundo\Core\Http\Request\File\FileRequest('file');
 (new \Nemundo\Core\Debug\Debug())->write($request->filename);
 
+
+
+
 //$request->saveFile('C:/git/schleuniger/tmp/download/file.jpg');
-$request->saveAsUniqueFilename('C:/git/schleuniger/tmp/download/');
+//$request->saveAsUniqueFilename('C:/git/schleuniger/tmp/download/');
 
 
 
