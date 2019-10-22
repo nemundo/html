@@ -84,8 +84,6 @@ class HtmlDocument extends AbstractHtmlContainer
         $this->body->addContainer($container);
         }
 
-
-
     }
 
 
@@ -104,8 +102,6 @@ class HtmlDocument extends AbstractHtmlContainer
     }
 
 
-    // addJavaScriptLibary
-    // addJavaScript
     public function addJsUrl($url)
     {
 
@@ -157,18 +153,5 @@ class HtmlDocument extends AbstractHtmlContainer
         $response->sendResponse();
 
     }
-
-
-    /*
-    public function saveFile($filename)
-    {
-
-        $file = new TextFile();
-        $file->filename = $filename;
-        $file->addLine($this->getHtml());
-
-
-    }*/
-
 
 }
