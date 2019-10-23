@@ -5,8 +5,7 @@ namespace Nemundo\Html\Image;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
 
-// AbstractImg
-abstract class AbstractImage extends AbstractHtmlContainer
+abstract class AbstractImg extends AbstractHtmlContainer
 {
 
     /**

@@ -3,8 +3,7 @@
 namespace Nemundo\Html\Image;
 
 
-// Img
-class Image extends AbstractImage
+class Img extends AbstractImg
 {
 
     /**
