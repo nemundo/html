@@ -9,12 +9,12 @@ class RangeInput extends AbstractInput
     /**
      * @var int
      */
-    public $min=0;
+    public $min = 0;
 
     /**
      * @var int
      */
-    public $max=10;
+    public $max = 10;
 
     /**
      * @var int
@@ -25,9 +25,9 @@ class RangeInput extends AbstractInput
     {
 
         $this->addAttribute('type', 'range');
-$this->addAttribute('min',$this->min);
-        $this->addAttribute('max',$this->max);
-        $this->addAttribute('max',$this->step);
+        $this->addAttribute('min', $this->min);
+        $this->addAttribute('max', $this->max);
+        $this->addAttribute('step', $this->step);
 
         return parent::getContent();
 
