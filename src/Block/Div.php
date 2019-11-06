@@ -2,9 +2,9 @@
 
 namespace Nemundo\Html\Block;
 
-use Nemundo\Html\Container\AbstractHtmlContainer;
+use Nemundo\Html\Container\AbstractContentContainer;
 
-class Div extends AbstractHtmlContainer
+class Div extends AbstractContentContainer //AbstractHtmlContainer
 {
 
     public function getContent()
@@ -12,6 +12,5 @@ class Div extends AbstractHtmlContainer
         $this->tagName = 'div';
         return parent::getContent();
     }
-
 
 }
