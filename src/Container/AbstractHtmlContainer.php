@@ -7,7 +7,7 @@ use Nemundo\Core\Base\AbstractBaseClass;
 use Nemundo\Core\Language\Translation;
 
 
-abstract class AbstractHtmlContainer extends AbstractTagContainer  // AbstractContainer
+abstract class AbstractHtmlContainer extends AbstractTagContainer
 {
 
     /**
