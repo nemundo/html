@@ -8,6 +8,9 @@ use Nemundo\Html\Container\AbstractContentContainer;
 class Label extends AbstractContentContainer
 {
 
+    /**
+     * @var string
+     */
     public $for;
 
     public function getContent()
@@ -17,6 +20,7 @@ class Label extends AbstractContentContainer
         $this->addAttribute('for', $this->for);
 
         return parent::getContent();
+
     }
 
 }
