@@ -42,7 +42,7 @@ abstract class AbstractTagContainer extends AbstractContainer
 
     // addDataProperty
 
-    protected function addDataAttribute($attribute, $value)
+    public function addDataAttribute($attribute, $value)
     {
 
         //if ($value !== null) {
