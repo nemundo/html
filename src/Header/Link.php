@@ -9,26 +9,31 @@ class Link extends AbstractHtmlContainer
 {
 
     /**
-     * @var
+     * @var string
      */
     public $href;
 
+    /**
+     * @var string
+     */
     public $media;
 
+    /**
+     * @var string
+     */
+    public $rel = 'stylesheet';
 
     public function getContent()
     {
 
         $this->tagName = 'link';
         $this->renderClosingTag = false;
-        $this->addAttribute('rel', 'stylesheet');
+        $this->addAttribute('rel', $this->rel);
         $this->addAttribute('href', $this->href);
-
-        if ($this->media !== null) {
-            $this->addAttribute('media', $this->media);
-        }
+        $this->addAttribute('media', $this->media);
 
         return parent::getContent();
+
     }
 
 }
