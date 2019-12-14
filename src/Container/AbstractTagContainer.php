@@ -39,15 +39,10 @@ abstract class AbstractTagContainer extends AbstractContainer
      */
     private $content = '';
 
-
-    // addDataProperty
-
     public function addDataAttribute($attribute, $value)
     {
 
-        //if ($value !== null) {
             $this->attributeList['data-'.$attribute] = $value;
-        //}
 
     }
 
