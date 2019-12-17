@@ -38,20 +38,12 @@ class Textarea extends AbstractFormItem
      */
     public $placeholder;
 
-    /**
-     * @var string
-     */
-    //public $value;
-
 
     public function getContent()
     {
 
-        $this->returnOneLine = true;
         $this->tagName = 'textarea';
-
-        // to do
-        // required
+        $this->returnOneLine = false;
 
         $this->addAttribute('rows', $this->rows);
         $this->addAttribute('cols', $this->cols);
@@ -69,7 +61,6 @@ class Textarea extends AbstractFormItem
             $this->addAttributeWithoutValue('autofocus');
         }
 
-        // korrekt wäre content!!!
         $this->addContent($this->value);
 
         return parent::getContent();
