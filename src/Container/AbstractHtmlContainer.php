@@ -3,7 +3,6 @@
 namespace Nemundo\Html\Container;
 
 
-use Nemundo\Core\Base\AbstractBaseClass;
 use Nemundo\Core\Language\Translation;
 
 
