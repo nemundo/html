@@ -3,6 +3,8 @@
 namespace Nemundo\Html\Form\Input;
 
 
+use Nemundo\Core\Language\Translation;
+
 class TextInput extends AbstractInput
 {
 
@@ -55,10 +57,8 @@ class TextInput extends AbstractInput
     public function getContent()
     {
 
-        //$this->checkBooleanProperty('autofocus');
-
         $this->addAttribute('type', $this->inputType);
-        $this->addAttribute('placeholder', $this->placeholder);
+        $this->addAttribute('placeholder', (new Translation())->getText($this->placeholder));
         $this->addAttribute('size', $this->size);
         $this->addAttribute('maxlength', $this->maxLength);
 
@@ -68,7 +68,6 @@ class TextInput extends AbstractInput
 
         if (!$this->autocomplete) {
             $this->addAttribute('autocomplete', 'off');
-            //$this->addAttribute('autocomplete', 'new-password');
         }
 
         if ($this->autofocus) {
