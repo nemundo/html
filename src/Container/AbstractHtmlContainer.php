@@ -30,25 +30,6 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     protected $cssClassList = [];
 
     /**
-     * @var string
-     */
-    //protected $tagName;
-
-    /**
-     * @var bool
-     */
-    //protected $renderClosingTag = true;
-
-    /**
-     * @var bool
-     */
-    //protected $returnOneLine = false;
-
-    //private $attributeList = [];
-
-    //private $attributeWithoutValue = array();
-
-    /**
      * @var AbstractHtmlContainer[]
      */
     protected $containerList = [];
@@ -66,67 +47,6 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
         return $this;
 
     }
-
-
-    /*
-    public function addAttribute($attribute, $value)
-    {
-
-        if ($value !== null) {
-            $this->attributeList[$attribute] = $value;
-        }
-
-    }
-
-    protected function addAttributeWithoutValue($attribute)
-    {
-
-        $this->attributeWithoutValue[] = $attribute;
-
-    }
-
-
-    protected function getAttribute()
-    {
-
-        $attribute = '';
-
-        foreach ($this->attributeList as $key => $value) {
-            $attribute = $attribute . ' ' . $key . '="' . $value . '"';
-        }
-
-        foreach ($this->attributeWithoutValue as $value) {
-            $attribute = $attribute . ' ' . $value;
-        }
-
-        return $attribute;
-    }
-
-
-    protected function getOpeningTag()
-    {
-
-        $closing = '>';
-        if (!$this->renderClosingTag) {
-            $closing = ' />';
-        }
-
-        $html = '<' . $this->tagName . $this->getAttribute() . $closing;
-
-        $html .= PHP_EOL;
-
-        return $html;
-
-    }
-
-
-    protected function getClosingTag()
-    {
-
-        $html = '</' . $this->tagName . '>' . PHP_EOL;
-        return $html;
-
-    }*/
 
 
     public function getContent()
@@ -170,8 +90,6 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
             $html .= PHP_EOL;
 
         }
-
-        //$html = trim($html);
 
         return $html;
 

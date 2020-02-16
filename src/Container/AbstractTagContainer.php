@@ -3,10 +3,6 @@
 namespace Nemundo\Html\Container;
 
 
-use Nemundo\Core\Base\AbstractBaseClass;
-use Nemundo\Core\Language\Translation;
-
-
 abstract class AbstractTagContainer extends AbstractContainer
 {
 
@@ -42,10 +38,9 @@ abstract class AbstractTagContainer extends AbstractContainer
     public function addDataAttribute($attribute, $value)
     {
 
-            $this->attributeList['data-'.$attribute] = $value;
+        $this->attributeList['data-' . $attribute] = $value;
 
     }
-
 
 
     protected function addAttribute($attribute, $value)
@@ -108,50 +103,31 @@ abstract class AbstractTagContainer extends AbstractContainer
     }
 
 
-    // getContent
     public function getContent()
     {
 
         $html = '';
 
+        if ($this->tagName !== null) {
+            $html = $this->getOpeningTag();
+        }
 
-            if ($this->tagName !== null) {
-                $html = $this->getOpeningTag();
+        $html .= parent::getContent();
+
+        if ($this->tagName !== null) {
+            if ($this->renderClosingTag) {
+                $html .= $this->getClosingTag();
             }
+        }
 
-            //$html .= $this->html;
+        if ($this->returnOneLine) {
+            $html = str_replace(PHP_EOL, '', $html);
+        }
 
-            $html .= parent::getContent();
-
-
-            /*foreach ($this->getContainerList() as $com) {
-                $html .= $com->getHtml();
-            }*/
-
-            if ($this->tagName !== null) {
-                if ($this->renderClosingTag) {
-                    $html .= $this->getClosingTag();
-                }
-            }
-
-            if ($this->returnOneLine) {
-                $html = str_replace(PHP_EOL, '', $html);
-            }
-
-            $html .= PHP_EOL;
+        $html .= PHP_EOL;
 
         return $html;
 
     }
-
-
-    /*
-    protected function addHtml($html)
-    {
-
-        $this->html .= $conttext . PHP_EOL;
-        return $this;
-
-    }*/
 
 }

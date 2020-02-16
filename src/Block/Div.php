@@ -4,7 +4,7 @@ namespace Nemundo\Html\Block;
 
 use Nemundo\Html\Container\AbstractContentContainer;
 
-class Div extends AbstractContentContainer //AbstractHtmlContainer
+class Div extends AbstractContentContainer
 {
 
     public function getContent()
