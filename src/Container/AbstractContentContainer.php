@@ -13,10 +13,19 @@ class AbstractContentContainer extends AbstractHtmlContainer
      */
     public $content;
 
+    /**
+     * @var bool
+     */
+    public $editable = false;
+
     public function getContent()
     {
 
         $this->returnOneLine = true;
+
+        if ($this->editable) {
+            $this->addAttribute('contenteditable','true');
+        }
 
         $content = (new Translation())->getText($this->content);
         $this->addContent($content);
