@@ -96,7 +96,7 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     }
 
 
-    protected function addContent($content)
+    protected function addContent($content)  //, $appendNewLine=true)
     {
 
         $text = $content;
@@ -104,7 +104,10 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
             $text = (new Translation())->getText($content);
         }
 
-        $this->content .= $text . PHP_EOL;
+//        $this->content .= $text . PHP_EOL;
+        $this->content .= $text ;
+
+
         return $this;
 
     }

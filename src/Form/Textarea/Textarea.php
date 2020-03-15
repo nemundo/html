@@ -73,6 +73,9 @@ class Textarea extends AbstractFormItem
 
         $this->addContent($this->value);
 
+        //$this->content .= $text . PHP_EOL;
+
+
         return parent::getContent();
 
     }
