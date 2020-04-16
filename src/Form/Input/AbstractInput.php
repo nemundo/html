@@ -27,6 +27,7 @@ abstract class AbstractInput extends AbstractFormItem
         $this->addAttribute('value', htmlspecialchars($this->value));
 
         return parent::getContent();
+
     }
 
 }
