@@ -19,6 +19,8 @@ class AcceptFileType
 
     const AUDIO = 'audio/*';
 
+    const TEXT = 'text/*';
+
     const PDF = '.pdf';
 
     const ZIP = '.zip';
