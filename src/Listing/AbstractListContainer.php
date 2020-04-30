@@ -26,4 +26,15 @@ abstract class AbstractListContainer extends AbstractHtmlContainer
     }
 
 
+    public function addText($text)
+    {
+
+        $li = new Li($this);
+        $li->content = $text;
+
+        return $this;
+
+    }
+
+
 }
