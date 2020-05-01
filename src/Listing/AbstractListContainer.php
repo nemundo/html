@@ -15,7 +15,7 @@ abstract class AbstractListContainer extends AbstractHtmlContainer
     public function addContainer(AbstractContainer $container = null)
     {
 
-        if ($container->getClassName() == Li::class) {
+        if ($container->isObjectOfClass(Li::class)) {   //getClassName() == Li::class) {
             parent::addContainer($container);
         } else {
             $li = new Li();
