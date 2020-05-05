@@ -5,7 +5,6 @@ namespace Nemundo\Html\Hyperlink;
 use Nemundo\Html\Container\AbstractContentContainer;
 
 
-// AbstractA
 abstract class AbstractHyperlink extends AbstractContentContainer
 {
 
@@ -19,12 +18,6 @@ abstract class AbstractHyperlink extends AbstractContentContainer
      */
     protected $target;
 
-    /**
-     * @var string
-     */
-    //protected $title;
-
-
     public function getContent()
     {
 
@@ -33,7 +26,6 @@ abstract class AbstractHyperlink extends AbstractContentContainer
 
         $this->addAttribute('href', $this->href);
         $this->addAttribute('target', $this->target);
-        //$this->addAttribute('title', $this->title);
 
         return parent::getContent();
 
