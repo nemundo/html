@@ -32,7 +32,6 @@ class Select extends AbstractFormItem
         if ($this->multiple) {
             $this->addAttributeWithoutValue('multiple');
             $this->name = $this->name . '[]';
-            //$this->addAttribute('size', '10');
         }
 
         return parent::getContent();
