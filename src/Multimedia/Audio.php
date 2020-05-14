@@ -6,11 +6,7 @@ namespace Nemundo\Html\Multimedia;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
 
-//namespace Nemundo\Html\AudioVideo;
-//namespace Nemundo\Html\Player;
-
-// Audio
-class AudioPlayer extends AbstractHtmlContainer
+class Audio extends AbstractHtmlContainer
 {
 
     /**

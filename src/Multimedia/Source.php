@@ -6,7 +6,6 @@ namespace Nemundo\Html\Multimedia;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
 
-// https://www.w3schools.com/tags/tag_source.asp
 class Source extends AbstractHtmlContainer
 {
 
