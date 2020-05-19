@@ -3,6 +3,7 @@
 namespace Nemundo\Html\Button;
 
 
+use Nemundo\Core\Language\Translation;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
 class Button extends AbstractHtmlContainer
@@ -24,7 +25,7 @@ class Button extends AbstractHtmlContainer
     {
 
         $this->tagName = 'button';
-        $this->addContent($this->label);
+        $this->addContent((new Translation())->getText($this->label));
 
         if ($this->disabled) {
             $this->addAttributeWithoutValue('disabled');

@@ -3,6 +3,7 @@
 namespace Nemundo\Html\Form\Button;
 
 
+use Nemundo\Core\Language\LanguageCode;
 use Nemundo\Core\Language\Translation;
 use Nemundo\Html\Button\Button;
 
@@ -22,7 +23,7 @@ class SubmitButton extends Button
     protected function loadContainer()
     {
         parent::loadContainer();
-        $this->label = 'Submit';
+        $this->label[LanguageCode::EN] = 'Submit';
     }
 
     public function getContent()
