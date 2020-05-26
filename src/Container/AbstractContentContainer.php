@@ -24,7 +24,8 @@ class AbstractContentContainer extends AbstractHtmlContainer
         $this->returnOneLine = true;
 
         if ($this->editable) {
-            $this->addAttribute('contenteditable','true');
+            //$this->addAttribute('contenteditable','true');
+            $this->addAttributeWithoutValue('contenteditable');
         }
 
         $content = (new Translation())->getText($this->content);
