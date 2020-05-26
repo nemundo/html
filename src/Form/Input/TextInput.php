@@ -49,6 +49,11 @@ class TextInput extends AbstractInput
     public $placeholder;
 
     /**
+     * @var string
+     */
+    public $list;
+
+    /**
      * @var InputType
      */
     public $inputType = InputType::TEXT;
@@ -61,6 +66,7 @@ class TextInput extends AbstractInput
         $this->addAttribute('placeholder', (new Translation())->getText($this->placeholder));
         $this->addAttribute('size', $this->size);
         $this->addAttribute('maxlength', $this->maxLength);
+        $this->addAttribute('list', $this->list);
 
         if ($this->readOnly) {
             $this->addAttributeWithoutValue('readonly');
