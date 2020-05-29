@@ -18,6 +18,12 @@ abstract class AbstractHyperlink extends AbstractContentContainer
      */
     protected $target;
 
+    /**
+     * @var int
+     */
+    protected $tabindex;
+
+
     public function getContent()
     {
 
@@ -26,6 +32,7 @@ abstract class AbstractHyperlink extends AbstractContentContainer
 
         $this->addAttribute('href', $this->href);
         $this->addAttribute('target', $this->target);
+        $this->addAttribute('tabindex', $this->tabindex);
 
         return parent::getContent();
 

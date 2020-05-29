@@ -3,7 +3,6 @@
 namespace Nemundo\Html\Hyperlink;
 
 
-// class A
 class Hyperlink extends AbstractHyperlink
 {
 
@@ -21,6 +20,11 @@ class Hyperlink extends AbstractHyperlink
      * @var string
      */
     public $title;
+
+    /**
+     * @var int
+     */
+    public $tabindex;
 
 
 }
