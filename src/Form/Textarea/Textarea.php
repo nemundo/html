@@ -26,12 +26,12 @@ class Textarea extends AbstractFormItem
     /**
      * @var int
      */
-    public $rows = 4;
+    public $rows;  // = 4;
 
     /**
      * @var int
      */
-    public $cols = 50;
+    public $cols;  // = 50;
 
     /**
      * @var string
@@ -43,7 +43,7 @@ class Textarea extends AbstractFormItem
     {
 
         $this->tagName = 'textarea';
-        $this->returnOneLine = false;   // true;  // false;
+        $this->returnOneLine = false;
 
         $this->addAttribute('rows', $this->rows);
         $this->addAttribute('cols', $this->cols);
@@ -61,20 +61,7 @@ class Textarea extends AbstractFormItem
             $this->addAttributeWithoutValue('autofocus');
         }
 
-
-        /*
-        $value = $this->value;
-
-        if ($value == null) {
-            $value='';
-        }
-
-        $value=trim($value);*/
-
         $this->addContent($this->value);
-
-        //$this->content .= $text . PHP_EOL;
-
 
         return parent::getContent();
 
