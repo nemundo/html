@@ -26,12 +26,12 @@ class Textarea extends AbstractFormItem
     /**
      * @var int
      */
-    public $rows;  // = 4;
+    public $rows;
 
     /**
      * @var int
      */
-    public $cols;  // = 50;
+    public $cols;
 
     /**
      * @var string
