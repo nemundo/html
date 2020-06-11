@@ -22,8 +22,11 @@ class SubmitButton extends Button
 
     protected function loadContainer()
     {
+
         parent::loadContainer();
         $this->label[LanguageCode::EN] = 'Submit';
+        $this->label[LanguageCode::DE] = 'Senden';
+
     }
 
     public function getContent()
