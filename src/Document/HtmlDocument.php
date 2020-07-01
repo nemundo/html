@@ -14,7 +14,7 @@ use Nemundo\Html\Header\Title;
 use Nemundo\Html\Script\JavaScript;
 
 
-class HtmlDocument extends AbstractHtmlContainer
+class HtmlDocument extends AbstractDocument  // AbstractHtmlContainer
 {
 
     /**
@@ -22,6 +22,7 @@ class HtmlDocument extends AbstractHtmlContainer
      */
     public $title;
     // pageTitle
+    // headerTitle
 
     /**
      * @var StatusCode
