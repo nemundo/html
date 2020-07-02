@@ -27,7 +27,7 @@ class HtmlDocument extends AbstractDocument  // AbstractHtmlContainer
     /**
      * @var StatusCode
      */
-    public $statusCode = StatusCode::OK;
+    //public $statusCode = StatusCode::OK;
 
     /**
      * @var Head

@@ -18,6 +18,12 @@ use Nemundo\Html\Script\JavaScript;
 abstract class AbstractDocument extends AbstractContainer  // AbstractHtmlContainer
 {
 
+
+    /**
+     * @var StatusCode
+     */
+    public $statusCode = StatusCode::OK;
+
     abstract public function render();
 
     public function __construct()
