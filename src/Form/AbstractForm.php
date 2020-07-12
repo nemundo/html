@@ -28,7 +28,6 @@ abstract class AbstractForm extends AbstractHtmlContainer
     {
 
         $this->tagName = 'form';
-        //$this->addAttribute('name', $this->id);
         $this->addAttribute('name', $this->name);
 
         // notwendig für File Upload
