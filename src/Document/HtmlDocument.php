@@ -3,10 +3,10 @@
 namespace Nemundo\Html\Document;
 
 use Nemundo\Com\JavaScript\Code\AbstractJavaScriptCode;
+use Nemundo\Core\Http\Response\ContentType;
 use Nemundo\Core\Http\Response\HttpResponse;
 use Nemundo\Core\Http\Response\StatusCode;
 use Nemundo\Html\Container\AbstractContainer;
-use Nemundo\Html\Container\AbstractHtmlContainer;
 use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 use Nemundo\Html\Header\LibraryHeader;
 use Nemundo\Html\Header\Meta;
@@ -14,7 +14,7 @@ use Nemundo\Html\Header\Title;
 use Nemundo\Html\Script\JavaScript;
 
 
-class HtmlDocument extends AbstractDocument  // AbstractHtmlContainer
+class HtmlDocument extends AbstractDocument
 {
 
     /**
@@ -73,16 +73,16 @@ class HtmlDocument extends AbstractDocument  // AbstractHtmlContainer
 
         if ($container->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
             $this->addHeaderContainer($container);
-        $default=false;
+            $default = false;
         }
 
         if ($container->isObjectOfClass(AbstractJavaScriptCode::class)) {
             $this->script->addContainer($container);
-            $default=false;
+            $default = false;
         }
 
         if ($default) {
-        $this->body->addContainer($container);
+            $this->body->addContainer($container);
         }
 
     }
@@ -127,7 +127,7 @@ class HtmlDocument extends AbstractDocument  // AbstractHtmlContainer
 
         // check ob vorhanden
         if ($this->script->hasChild()) {
-        $this->head->addContainer($this->script);
+            $this->head->addContainer($this->script);
         }
 
         // muss vor Header ausgelesen werden
@@ -151,6 +151,7 @@ class HtmlDocument extends AbstractDocument  // AbstractHtmlContainer
         $response = new HttpResponse();
         $response->content = $this->getContent();
         $response->statusCode = $this->statusCode;
+        $response->contentType = ContentType::HTML;
         $response->sendResponse();
 
     }
