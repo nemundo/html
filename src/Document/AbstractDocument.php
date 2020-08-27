@@ -5,7 +5,6 @@ namespace Nemundo\Html\Document;
 use Nemundo\Core\Http\Response\StatusCode;
 use Nemundo\Html\Container\AbstractContainer;
 
-
 abstract class AbstractDocument extends AbstractContainer
 {
 
