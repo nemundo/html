@@ -28,7 +28,7 @@ abstract class AbstractTableCell extends AbstractContentContainer
     public function getContent()
     {
 
-        $this->returnOneLine = true;
+        //$this->returnOneLine = true;
 
         $this->addAttribute('colspan', $this->colspan);
         $this->addAttribute('width', $this->width);
