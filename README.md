@@ -1,4 +1,4 @@
-# HTML Generator
+# Nemundo Html
 
 Generate Html Source Code.
 
@@ -8,7 +8,7 @@ Generate Html Source Code.
 composer require nemundo/html
 ```
 
-## Dev Installation 
+## Submodule Installation 
 ```
 git submodule add https://github.com/nemundo/html.git lib/html
 ```
@@ -17,6 +17,12 @@ git submodule add https://github.com/nemundo/html.git lib/html
 $lib = new Library($autoload);
 $lib->source = __DIR__ . '/lib/html/src/';
 $lib->namespace = 'Nemundo\\Html';
+```
+
+###Submodule Deinstallation
+```
+git submodule deinit lib/html
+git rm lib/html
 ```
 
 ## Example
