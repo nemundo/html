@@ -55,7 +55,6 @@ abstract class AbstractContainer extends AbstractBaseClass
     }
 
 
-
     public function getContainerList($recursive = false)
     {
 
@@ -87,26 +86,18 @@ abstract class AbstractContainer extends AbstractBaseClass
 
         return $value;
 
-
     }
 
 
-    // getContent
     public function getContent()
     {
 
         $html = '';
-
         $html .= $this->content;
-
         foreach ($this->getContainerList() as $com) {
             $html .= $com->getContent();
         }
-
-
         $html .= PHP_EOL;
-
-        //$html = trim($html);
 
         return $html;
 
