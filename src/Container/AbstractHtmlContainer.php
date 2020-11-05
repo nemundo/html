@@ -49,6 +49,16 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     }
 
 
+    public function getHeader() {
+
+
+        $header='';
+
+        return $header;
+
+    }
+
+
     public function getContent()
     {
 
@@ -96,7 +106,13 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     }
 
 
-    protected function addContent($content)  //, $appendNewLine=true)
+
+
+
+
+
+
+    protected function addContent($content)
     {
 
         $text = $content;
@@ -104,9 +120,7 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
             $text = (new Translation())->getText($content);
         }
 
-//        $this->content .= $text . PHP_EOL;
         $this->content .= $text ;
-
 
         return $this;
 
