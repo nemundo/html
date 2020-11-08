@@ -140,11 +140,11 @@ class HtmlDocument extends AbstractDocument
         $html = new Html();
 
         foreach ((new LibraryHeader())->getHeaderContainerList() as $com) {
-            (new Debug())->write($com->getClassName());
+            //(new Debug())->write($com->getClassName());
             $this->head->addContainer($com);
         }
 
-        (new Debug())->write($this->head->getContent());
+        //(new Debug())->write($this->head->getContent());
 
         $html->addContent($this->head->getContent());
         $html->addContent($htmlBody);
