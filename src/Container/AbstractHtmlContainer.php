@@ -6,6 +6,7 @@ namespace Nemundo\Html\Container;
 use Nemundo\Core\Debug\Debug;
 use Nemundo\Core\Language\Translation;
 use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
+use Nemundo\Html\Header\LibraryHeader;
 
 
 abstract class AbstractHtmlContainer extends AbstractTagContainer
@@ -42,6 +43,9 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     private $content = '';
 
 
+    private $header='';
+
+
     public function addCssClass($cssClass)
     {
 
@@ -51,13 +55,13 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     }
 
 
-    /*
+/*
     public function getHeader() {
 
 
-        $header='';
+        //$header='';
 
-        return $header;
+        return $this->header;
 
     }*/
 
@@ -94,16 +98,15 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
                 if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
 
                     //(new Debug())->write($com->getContent());
+                    //$this->header .= $com->getContent();
+                    LibraryHeader::addHeaderContainer($com);
+
 
                 } else {
 
                     $html .= $com->getContent();
 
                 }
-
-
-
-
 
             }
 
@@ -124,12 +127,6 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
         return $html;
 
     }
-
-
-
-
-
-
 
 
     protected function addContent($content)

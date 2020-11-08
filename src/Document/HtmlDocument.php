@@ -3,6 +3,7 @@
 namespace Nemundo\Html\Document;
 
 use Nemundo\Com\JavaScript\Code\AbstractJavaScriptCode;
+use Nemundo\Core\Debug\Debug;
 use Nemundo\Core\Http\Response\ContentType;
 use Nemundo\Core\Http\Response\HttpResponse;
 use Nemundo\Core\Http\Response\StatusCode;
@@ -130,10 +131,20 @@ class HtmlDocument extends AbstractDocument
             $this->head->addContainer($this->script);
         }
 
+
+
+
         // muss vor Header ausgelesen werden
         $htmlBody = $this->body->getContent();
 
         $html = new Html();
+
+        foreach ((new LibraryHeader())->getHeaderContainerList() as $com) {
+            (new Debug())->write($com->getClassName());
+            $this->head->addContainer($com);
+        }
+
+        (new Debug())->write($this->head->getContent());
 
         $html->addContent($this->head->getContent());
         $html->addContent($htmlBody);

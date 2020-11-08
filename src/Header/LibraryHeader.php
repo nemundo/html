@@ -63,6 +63,11 @@ class LibraryHeader extends AbstractHtmlContainer
     }
 
 
+    public function getHeaderContainerList() {
+        return LibraryHeader::$headerContainerList;
+    }
+
+
     public function getContent()
     {
 

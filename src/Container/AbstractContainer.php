@@ -101,6 +101,7 @@ abstract class AbstractContainer extends AbstractBaseClass
             if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
 
                 (new Debug())->write($com->getContent());
+                exit;
 
             } else {
 
