@@ -3,7 +3,9 @@
 namespace Nemundo\Html\Container;
 
 
+use Nemundo\Core\Debug\Debug;
 use Nemundo\Core\Language\Translation;
+use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
 
 abstract class AbstractHtmlContainer extends AbstractTagContainer
@@ -49,6 +51,7 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     }
 
 
+    /*
     public function getHeader() {
 
 
@@ -56,7 +59,7 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
 
         return $header;
 
-    }
+    }*/
 
 
     public function getContent()
@@ -84,7 +87,24 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
             $html .= $this->content;
 
             foreach ($this->getContainerList() as $com) {
-                $html .= $com->getContent();
+
+                //$html .= $com->getContent();
+
+
+                if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
+
+                    //(new Debug())->write($com->getContent());
+
+                } else {
+
+                    $html .= $com->getContent();
+
+                }
+
+
+
+
+
             }
 
             if ($this->tagName !== null) {

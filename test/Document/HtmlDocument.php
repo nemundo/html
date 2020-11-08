@@ -9,7 +9,6 @@ require '../config.php';
 class ShowContainer extends \Nemundo\Html\Container\AbstractHtmlContainer
 {
 
-
     public function getHeader() {
 
         $meta = new Meta($this);
@@ -30,16 +29,10 @@ class ShowContainer extends \Nemundo\Html\Container\AbstractHtmlContainer
         return parent::getContent();
     }
 
-
-
-
-
-
 }
 
 
 (new \Nemundo\Core\Debug\Debug())->write((new ShowContainer())->getContent());
-
 (new \Nemundo\Core\Debug\Debug())->write((new ShowContainer())->getContent());
 
 
@@ -51,7 +44,7 @@ class ShowContainer extends \Nemundo\Html\Container\AbstractHtmlContainer
 
 
 
-/*
+
 
 $html = new \Nemundo\Html\Document\HtmlDocument();
 $html->title = 'Document Example';

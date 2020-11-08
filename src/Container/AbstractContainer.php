@@ -3,6 +3,8 @@
 namespace Nemundo\Html\Container;
 
 use Nemundo\Core\Base\AbstractBaseClass;
+use Nemundo\Core\Debug\Debug;
+use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
 
 abstract class AbstractContainer extends AbstractBaseClass
@@ -95,7 +97,18 @@ abstract class AbstractContainer extends AbstractBaseClass
         $html = '';
         $html .= $this->content;
         foreach ($this->getContainerList() as $com) {
+
+            if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
+
+                (new Debug())->write($com->getContent());
+
+            } else {
+
             $html .= $com->getContent();
+
+            }
+
+
         }
         $html .= PHP_EOL;
 
@@ -111,5 +124,26 @@ abstract class AbstractContainer extends AbstractBaseClass
         return $this;
 
     }
+
+
+    public function getHeader() {
+
+        $header='';
+        return $header;
+
+
+       /* $html = '';
+        $html .= $this->content;
+        foreach ($this->getContainerList() as $com) {
+            $html .= $com->getContent();
+        }
+        $html .= PHP_EOL;
+
+        return $html;*/
+
+
+
+    }
+
 
 }
