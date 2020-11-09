@@ -3,6 +3,8 @@
 namespace Nemundo\Html\Container;
 
 
+use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
+
 abstract class AbstractTagContainer extends AbstractContainer
 {
 
@@ -108,11 +110,20 @@ abstract class AbstractTagContainer extends AbstractContainer
 
         $html = '';
 
+        //$item=new HtmlContainerItem();
+
+
         if ($this->tagName !== null) {
             $html = $this->getOpeningTag();
+
         }
 
-        $html .= parent::getContent();
+        $parentItem = parent::getContent();
+
+        //$html .= parent::getContent();
+        $html .=$this->content;
+        $html .= $parentItem->bodyContent;
+
 
         if ($this->tagName !== null) {
             if ($this->renderClosingTag) {
@@ -126,7 +137,23 @@ abstract class AbstractTagContainer extends AbstractContainer
 
         $html .= PHP_EOL;
 
-        return $html;
+        $item=new HtmlContainerItem();
+        //$item->bodyContent=$html;
+        //$item->headerContent=$parentItem->headerContent;
+
+        if ($this->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
+            $item->headerContent=$parentItem->headerContent.$html;
+
+        } else {
+            $item->bodyContent=$html;
+            $item->headerContent=$parentItem->headerContent;
+        }
+
+
+            return $item;
+
+
+        //return $html;
 
     }
 

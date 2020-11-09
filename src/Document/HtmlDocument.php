@@ -10,7 +10,8 @@ use Nemundo\Core\Http\Response\StatusCode;
 use Nemundo\Html\Container\AbstractContainer;
 use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 use Nemundo\Html\Header\LibraryHeader;
-use Nemundo\Html\Header\Meta;
+
+use Nemundo\Html\Header\Meta\Meta;
 use Nemundo\Html\Header\Title;
 use Nemundo\Html\Script\JavaScript;
 
@@ -33,12 +34,12 @@ class HtmlDocument extends AbstractDocument
     /**
      * @var Head
      */
-    protected $head;
+    //protected $head;
 
     /**
      * @var Body
      */
-    protected $body;
+    //protected $body;
 
     /**
      * @var JavaScript
@@ -57,16 +58,19 @@ class HtmlDocument extends AbstractDocument
 
         parent::loadContainer();
 
-        $this->head = new Head();
-        $this->body = new Body();
-        $this->script = new JavaScript();
+        //$this->head = new Head();
+        //$this->body = new Body();
+        //$this->script = new JavaScript();
 
-        $library = new LibraryHeader();
-        $this->addHeaderContainer($library);
+        //$library = new LibraryHeader();
+        //$this->addHeaderContainer($library);
+
+        //$library = new LibraryHeader($this);
 
     }
 
 
+    /*
     public function addContainer(AbstractContainer $container)
     {
 
@@ -92,7 +96,7 @@ class HtmlDocument extends AbstractDocument
     public function addHeaderContainer($container)
     {
         $this->head->addContainer($container);
-    }
+    }*/
 
 
     public function addCssUrl($url)
@@ -113,45 +117,91 @@ class HtmlDocument extends AbstractDocument
     }
 
 
-    public function getContent()
+
+
+    public function getHtml()
     {
 
-        $title = new Title();
+
+       /* $title = new Title($this);
         $title->content = $this->title;
-        $this->addHeaderContainer($title);
+        //$this->addHeaderContainer($title);
 
-        $meta = new Meta();
-        $meta->addAttribute('charset', 'UTF-8');
-        $this->addHeaderContainer($meta);
+        $meta = new Meta($this);
+        $meta->addAttribute('charset', 'UTF-8');*/
 
-        $this->addContent('<!DOCTYPE html>');
+
+
+        //$this->addHeaderContainer($meta);
+
+       // $this->addContent('<!DOCTYPE html>');*/
 
         // check ob vorhanden
-        if ($this->script->hasChild()) {
+        /*if ($this->script->hasChild()) {
             $this->head->addContainer($this->script);
-        }
+        }*/
 
 
 
 
         // muss vor Header ausgelesen werden
-        $htmlBody = $this->body->getContent();
+        //$htmlBody = $this->body->getContent()->bodyContent;
 
         $html = new Html();
 
+
+        $title = new Title($html);
+        $title->content = $this->title;
+        //$this->addHeaderContainer($title);
+
+
+        $meta = new Meta($html);
+        $meta->addAttribute('charset', 'UTF-8');
+        //$this->addHeaderContainer($meta);
+
+        //$html->addContent('<!DOCTYPE html>');
+
+        /*
         foreach ((new LibraryHeader())->getHeaderContainerList() as $com) {
             //(new Debug())->write($com->getClassName());
             $this->head->addContainer($com);
-        }
+        }*/
 
         //(new Debug())->write($this->head->getContent());
 
-        $html->addContent($this->head->getContent());
-        $html->addContent($htmlBody);
 
-        parent::addContainer($html);
 
-        return parent::getContent();
+
+        //$htmlItem  = parent::getContent();
+        $htmlItem  =$this->getContent();
+
+        //(new Debug())->write($htmlItem->headerContent);
+
+
+        $library = new LibraryHeader();
+
+
+
+        $head = new Head($html);
+        $head->content = $library->getContent()->headerContent. $htmlItem->headerContent;
+
+        $body = new Body($html);
+        $body->content = $htmlItem->bodyContent;
+
+
+        //$html->addContent($this->head->getContent()->headerContent);
+
+        //$html->addContent($head->getContent()->bodyContent);
+        //$html->addContent($body->getContent()->bodyContent);
+
+        //parent::addContainer($html);
+
+
+
+
+        return '<!DOCTYPE html>'.PHP_EOL.$html->getContent()->bodyContent;
+
+        //return parent::getContent();
 
     }
 
@@ -160,7 +210,7 @@ class HtmlDocument extends AbstractDocument
     {
 
         $response = new HttpResponse();
-        $response->content = $this->getContent();
+        $response->content = $this->getHtml();  // $this->getContent()->bodyContent;
         $response->statusCode = $this->statusCode;
         $response->contentType = ContentType::HTML;
         $response->sendResponse();

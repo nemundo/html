@@ -7,7 +7,7 @@ use Nemundo\Html\Container\AbstractHtmlContainer;
 use Nemundo\Html\Script\JavaScript;
 
 
-class LibraryHeader extends AbstractHtmlContainer
+class LibraryHeader extends AbstractHeaderHtmlContainer  // AbstractHtmlContainer
 {
 
     private static $jsUrlList = [];
@@ -54,6 +54,7 @@ class LibraryHeader extends AbstractHtmlContainer
     }
 
 
+    /*
     public static function addHeaderContainer(AbstractHtmlContainer $container)
     {
 
@@ -65,7 +66,7 @@ class LibraryHeader extends AbstractHtmlContainer
 
     public function getHeaderContainerList() {
         return LibraryHeader::$headerContainerList;
-    }
+    }*/
 
 
     public function getContent()
@@ -99,9 +100,10 @@ class LibraryHeader extends AbstractHtmlContainer
         }
 
 
+        /*
         foreach (LibraryHeader::$headerContainerList as $container) {
             $this->addContainer($container);
-        }
+        }*/
 
         return parent::getContent();
 

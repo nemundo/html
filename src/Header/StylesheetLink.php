@@ -5,7 +5,7 @@ namespace Nemundo\Html\Header;
 
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
-class StylesheetLink extends AbstractHtmlContainer
+class StylesheetLink extends AbstractHeaderHtmlContainer  // AbstractHtmlContainer
 {
 
     /**

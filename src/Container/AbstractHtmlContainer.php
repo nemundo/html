@@ -40,10 +40,10 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     /**
      * @var string
      */
-    private $content = '';
+ //   private $content = '';
 
 
-    private $header='';
+    //private $header='';
 
 
     public function addCssClass($cssClass)
@@ -66,10 +66,30 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     }*/
 
 
+    /**
+     * @return HtmlContainerItem
+     */
     public function getContent()
     {
 
-        $html = '';
+//        return parent::getContent();
+
+
+        $this->addAttribute('id', $this->id);
+
+        if ($this->title !== null) {
+            $this->addAttribute('title', (new Translation())->getText($this->title));
+        }
+
+        $this->cssClassList = array_unique($this->cssClassList);
+        if (sizeof($this->cssClassList) > 0) {
+            $this->addAttribute('class', join(' ', $this->cssClassList));
+        }
+
+
+        //$html = '';
+
+        /*$item=new HtmlContainerItem();
 
         if ($this->visible) {
 
@@ -85,46 +105,66 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
             }
 
             if ($this->tagName !== null) {
-                $html = $this->getOpeningTag();
+                //$html = $this->getOpeningTag();
+                $item->bodyContent=$this->getOpeningTag();
             }
 
-            $html .= $this->content;
+
+            /*$itemParent = parent::getContent();
+            $item->bodyContent .=$itemParent->bodyContent;*/
+
+            //$html .= $this->content;
+            /*$item->bodyContent.= $this->content;
+
+
+
 
             foreach ($this->getContainerList() as $com) {
 
                 //$html .= $com->getContent();
 
-
                 if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
 
                     //(new Debug())->write($com->getContent());
                     //$this->header .= $com->getContent();
-                    LibraryHeader::addHeaderContainer($com);
-
+                    //LibraryHeader::addHeaderContainer($com);
+                    $item->headerContent.= $com->getContent()->headerContent;
 
                 } else {
 
-                    $html .= $com->getContent();
+
+                    $item->bodyContent.= $com->getContent()->bodyContent;
+                    //$html .= $com->getContent();
 
                 }
 
-            }
+            }*/
 
+
+/*
             if ($this->tagName !== null) {
                 if ($this->renderClosingTag) {
-                    $html .= $this->getClosingTag();
+                    //$html .= $this->getClosingTag();
+                    $item->bodyContent.= $this->getClosingTag();
                 }
             }
 
             if ($this->returnOneLine) {
-                $html = str_replace(PHP_EOL, '', $html);
+                //$html = str_replace(PHP_EOL, '', $html);
+                $item->bodyContent=str_replace(PHP_EOL, '', $item->bodyContent);
             }
 
-            $html .= PHP_EOL;
+            //$html .= PHP_EOL;
+            $item->bodyContent.=PHP_EOL;
 
         }
 
-        return $html;
+        return $item;*/
+        //return $html;
+
+
+        return parent::getContent();
+
 
     }
 
@@ -137,7 +177,9 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
             $text = (new Translation())->getText($content);
         }
 
-        $this->content .= $text ;
+        parent::addContent($text);
+
+        //$this->content .= $text ;
 
         return $this;
 

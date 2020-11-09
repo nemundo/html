@@ -1,15 +1,20 @@
 <?php
 
-namespace Nemundo\Html\Header;
+namespace Nemundo\Html\Header\Meta;
 
 
-class Meta extends AbstractHeaderHtmlContainer
+use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
+
+abstract class AbstractMeta extends AbstractHeaderHtmlContainer
 {
 
+    /*
     public function addAttribute($attribute, $value)
     {
+
+
         parent::addAttribute($attribute, $value);
-    }
+    }*/
 
 
     public function getContent()

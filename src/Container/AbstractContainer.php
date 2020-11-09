@@ -3,8 +3,6 @@
 namespace Nemundo\Html\Container;
 
 use Nemundo\Core\Base\AbstractBaseClass;
-use Nemundo\Core\Debug\Debug;
-use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
 
 abstract class AbstractContainer extends AbstractBaseClass
@@ -94,6 +92,46 @@ abstract class AbstractContainer extends AbstractBaseClass
     public function getContent()
     {
 
+
+        $item = new HtmlContainerItem();
+
+        $item->bodyContent .= $this->content . PHP_EOL;
+
+        foreach ($this->getContainerList() as $com) {
+
+            //$html .= $com->getContent();
+
+            //(new Debug())->write($com->getClassName());
+
+            $childItem = $com->getContent();
+            $item->headerContent .= $childItem->headerContent . PHP_EOL;
+            $item->bodyContent .= $childItem->bodyContent . PHP_EOL;
+
+            /*
+            if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
+
+                //(new Debug())->write($com->getContent());
+                //$this->header .= $com->getContent();
+                //LibraryHeader::addHeaderContainer($com);
+                $item->headerContent.= $com->getContent()->headerContent;
+
+            } else {
+
+
+                $item->bodyContent.= $com->getContent()->bodyContent;
+                //$html .= $com->getContent();
+
+            }*/
+
+        }
+
+        //$html .= PHP_EOL;
+        $item->bodyContent .= PHP_EOL;
+
+        return $item;
+
+
+        /*
         $html = '';
         $html .= $this->content;
         foreach ($this->getContainerList() as $com) {
@@ -113,7 +151,7 @@ abstract class AbstractContainer extends AbstractBaseClass
         }
         $html .= PHP_EOL;
 
-        return $html;
+        return $html;*/
 
     }
 
@@ -127,21 +165,21 @@ abstract class AbstractContainer extends AbstractBaseClass
     }
 
 
-    public function getHeader() {
+    public function getHeader()
+    {
 
-        $header='';
+        $header = '';
         return $header;
 
 
-       /* $html = '';
-        $html .= $this->content;
-        foreach ($this->getContainerList() as $com) {
-            $html .= $com->getContent();
-        }
-        $html .= PHP_EOL;
+        /* $html = '';
+         $html .= $this->content;
+         foreach ($this->getContainerList() as $com) {
+             $html .= $com->getContent();
+         }
+         $html .= PHP_EOL;
 
-        return $html;*/
-
+         return $html;*/
 
 
     }
