@@ -165,6 +165,7 @@ abstract class AbstractContainer extends AbstractBaseClass
     }
 
 
+    /*
     public function getHeader()
     {
 
@@ -182,7 +183,7 @@ abstract class AbstractContainer extends AbstractBaseClass
          return $html;*/
 
 
-    }
+    //}
 
 
 }
