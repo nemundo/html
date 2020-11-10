@@ -157,4 +157,16 @@ abstract class AbstractTagContainer extends AbstractContainer
 
     }
 
+
+    public function getBodyContent() {
+return $this->getContent()->bodyContent;
+    }
+
+
+    public function getHeaderContent() {
+
+    }
+
+
+
 }

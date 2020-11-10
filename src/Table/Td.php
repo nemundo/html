@@ -3,7 +3,7 @@
 namespace Nemundo\Html\Table;
 
 
-class Td extends AbstractTableCell
+class Td extends AbstractTd
 {
 
     public function getContent()

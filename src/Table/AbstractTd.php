@@ -6,7 +6,7 @@ namespace Nemundo\Html\Table;
 use Nemundo\Html\Container\AbstractContentContainer;
 
 
-abstract class AbstractTableCell extends AbstractContentContainer
+abstract class AbstractTd extends AbstractContentContainer
 {
 
     /**
@@ -27,8 +27,6 @@ abstract class AbstractTableCell extends AbstractContentContainer
 
     public function getContent()
     {
-
-        //$this->returnOneLine = true;
 
         $this->addAttribute('colspan', $this->colspan);
         $this->addAttribute('width', $this->width);

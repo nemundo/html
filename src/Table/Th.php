@@ -2,7 +2,7 @@
 
 namespace Nemundo\Html\Table;
 
-class Th extends AbstractTableCell
+class Th extends AbstractTd
 {
 
     public function __construct(Thead $parentContainer = null)
