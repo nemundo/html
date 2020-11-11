@@ -53,6 +53,7 @@ class HtmlDocument extends AbstractDocument
     }
 
 
+    /*
     protected function loadContainer()
     {
 
@@ -118,9 +119,26 @@ class HtmlDocument extends AbstractDocument
 
 
 
+    public function getContent()
+    {
+
+        $title = new Title($this);
+        $title->content = $this->title;
+        //$this->addHeaderContainer($title);
+
+        $meta = new Meta($this);
+        $meta->addAttribute('charset', 'UTF-8');
+
+        return parent::getContent();
+
+    }
+
 
     public function getHtml()
     {
+
+
+
 
 
        /* $title = new Title($this);
@@ -142,21 +160,18 @@ class HtmlDocument extends AbstractDocument
         }*/
 
 
-
-
         // muss vor Header ausgelesen werden
         //$htmlBody = $this->body->getContent()->bodyContent;
 
         $html = new Html();
 
-
-        $title = new Title($html);
-        $title->content = $this->title;
+        /*$title = new Title($html);
+        $title->content ='123123'; $this->title;
         //$this->addHeaderContainer($title);
 
 
         $meta = new Meta($html);
-        $meta->addAttribute('charset', 'UTF-8');
+        $meta->addAttribute('charset', 'UTF-8');*/
         //$this->addHeaderContainer($meta);
 
         //$html->addContent('<!DOCTYPE html>');
@@ -180,10 +195,15 @@ class HtmlDocument extends AbstractDocument
 
         $library = new LibraryHeader();
 
-
-
         $head = new Head($html);
         $head->content = $library->getContent()->headerContent. $htmlItem->headerContent;
+
+        /*$title = new Title($head);
+        $title->content = $this->title;
+        //$this->addHeaderContainer($title);
+
+        $meta = new Meta($head);
+        $meta->addAttribute('charset', 'UTF-8');*/
 
         $body = new Body($html);
         $body->content = $htmlItem->bodyContent;
