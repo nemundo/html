@@ -110,20 +110,14 @@ abstract class AbstractTagContainer extends AbstractContainer
 
         $html = '';
 
-        //$item=new HtmlContainerItem();
-
-
         if ($this->tagName !== null) {
             $html = $this->getOpeningTag();
-
         }
 
         $parentItem = parent::getContent();
 
-        //$html .= parent::getContent();
-        $html .=$this->content;
+        $html .= $this->content;
         $html .= $parentItem->bodyContent;
-
 
         if ($this->tagName !== null) {
             if ($this->renderClosingTag) {
@@ -137,36 +131,29 @@ abstract class AbstractTagContainer extends AbstractContainer
 
         $html .= PHP_EOL;
 
-        $item=new HtmlContainerItem();
-        //$item->bodyContent=$html;
-        //$item->headerContent=$parentItem->headerContent;
+        $item = new HtmlContainerItem();
 
         if ($this->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
-            $item->headerContent=$parentItem->headerContent.$html;
-
+            $item->headerContent = $parentItem->headerContent . $html;
         } else {
-            $item->bodyContent=$html;
-            $item->headerContent=$parentItem->headerContent;
+            $item->bodyContent = $html;
+            $item->headerContent = $parentItem->headerContent;
         }
 
-
-            return $item;
-
-
-        //return $html;
+        return $item;
 
     }
 
 
-    public function getBodyContent() {
-return $this->getContent()->bodyContent;
+    public function getBodyContent()
+    {
+        return $this->getContent()->bodyContent;
     }
 
 
-    public function getHeaderContent() {
-
+    public function getHeaderContent()
+    {
+        return $this->getContent()->headerContent;
     }
-
-
 
 }

@@ -98,60 +98,14 @@ abstract class AbstractContainer extends AbstractBaseClass
         $item->bodyContent .= $this->content . PHP_EOL;
 
         foreach ($this->getContainerList() as $com) {
-
-            //$html .= $com->getContent();
-
-            //(new Debug())->write($com->getClassName());
-
             $childItem = $com->getContent();
             $item->headerContent .= $childItem->headerContent . PHP_EOL;
             $item->bodyContent .= $childItem->bodyContent . PHP_EOL;
-
-            /*
-            if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
-
-                //(new Debug())->write($com->getContent());
-                //$this->header .= $com->getContent();
-                //LibraryHeader::addHeaderContainer($com);
-                $item->headerContent.= $com->getContent()->headerContent;
-
-            } else {
-
-
-                $item->bodyContent.= $com->getContent()->bodyContent;
-                //$html .= $com->getContent();
-
-            }*/
-
         }
 
-        //$html .= PHP_EOL;
         $item->bodyContent .= PHP_EOL;
 
         return $item;
-
-
-        /*
-        $html = '';
-        $html .= $this->content;
-        foreach ($this->getContainerList() as $com) {
-
-            if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
-
-                (new Debug())->write($com->getContent());
-                exit;
-
-            } else {
-
-            $html .= $com->getContent();
-
-            }
-
-
-        }
-        $html .= PHP_EOL;
-
-        return $html;*/
 
     }
 
@@ -163,27 +117,5 @@ abstract class AbstractContainer extends AbstractBaseClass
         return $this;
 
     }
-
-
-    /*
-    public function getHeader()
-    {
-
-        $header = '';
-        return $header;
-
-
-        /* $html = '';
-         $html .= $this->content;
-         foreach ($this->getContainerList() as $com) {
-             $html .= $com->getContent();
-         }
-         $html .= PHP_EOL;
-
-         return $html;*/
-
-
-    //}
-
 
 }
