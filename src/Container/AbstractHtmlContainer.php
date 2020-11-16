@@ -75,16 +75,28 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
 //        return parent::getContent();
 
 
-        $this->addAttribute('id', $this->id);
+        $item=null;
 
-        if ($this->title !== null) {
-            $this->addAttribute('title', (new Translation())->getText($this->title));
+        if ($this->visible) {
+
+            $this->addAttribute('id', $this->id);
+
+            if ($this->title !== null) {
+                $this->addAttribute('title', (new Translation())->getText($this->title));
+            }
+
+            $this->cssClassList = array_unique($this->cssClassList);
+            if (sizeof($this->cssClassList) > 0) {
+                $this->addAttribute('class', join(' ', $this->cssClassList));
+            }
+
+           $item= parent::getContent();
+
+        } else {
+            $item = new HtmlContainerItem();
         }
 
-        $this->cssClassList = array_unique($this->cssClassList);
-        if (sizeof($this->cssClassList) > 0) {
-            $this->addAttribute('class', join(' ', $this->cssClassList));
-        }
+        return $item;
 
 
         //$html = '';
@@ -163,7 +175,7 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
         //return $html;
 
 
-        return parent::getContent();
+        //return parent::getContent();
 
 
     }
