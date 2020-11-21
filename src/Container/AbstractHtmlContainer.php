@@ -3,10 +3,7 @@
 namespace Nemundo\Html\Container;
 
 
-use Nemundo\Core\Debug\Debug;
 use Nemundo\Core\Language\Translation;
-use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
-use Nemundo\Html\Header\LibraryHeader;
 
 
 abstract class AbstractHtmlContainer extends AbstractTagContainer
@@ -37,14 +34,6 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
      */
     protected $containerList = [];
 
-    /**
-     * @var string
-     */
- //   private $content = '';
-
-
-    //private $header='';
-
 
     public function addCssClass($cssClass)
     {
@@ -55,27 +44,13 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
     }
 
 
-/*
-    public function getHeader() {
-
-
-        //$header='';
-
-        return $this->header;
-
-    }*/
-
-
     /**
      * @return HtmlContainerItem
      */
     public function getContent()
     {
 
-//        return parent::getContent();
-
-
-        $item=null;
+        $item = null;
 
         if ($this->visible) {
 
@@ -90,93 +65,13 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
                 $this->addAttribute('class', join(' ', $this->cssClassList));
             }
 
-           $item= parent::getContent();
+            $item = parent::getContent();
 
         } else {
             $item = new HtmlContainerItem();
         }
 
         return $item;
-
-
-        //$html = '';
-
-        /*$item=new HtmlContainerItem();
-
-        if ($this->visible) {
-
-            $this->addAttribute('id', $this->id);
-
-            if ($this->title !== null) {
-                $this->addAttribute('title', (new Translation())->getText($this->title));
-            }
-
-            $this->cssClassList = array_unique($this->cssClassList);
-            if (sizeof($this->cssClassList) > 0) {
-                $this->addAttribute('class', join(' ', $this->cssClassList));
-            }
-
-            if ($this->tagName !== null) {
-                //$html = $this->getOpeningTag();
-                $item->bodyContent=$this->getOpeningTag();
-            }
-
-
-            /*$itemParent = parent::getContent();
-            $item->bodyContent .=$itemParent->bodyContent;*/
-
-            //$html .= $this->content;
-            /*$item->bodyContent.= $this->content;
-
-
-
-
-            foreach ($this->getContainerList() as $com) {
-
-                //$html .= $com->getContent();
-
-                if ($com->isObjectOfClass(AbstractHeaderHtmlContainer::class)) {
-
-                    //(new Debug())->write($com->getContent());
-                    //$this->header .= $com->getContent();
-                    //LibraryHeader::addHeaderContainer($com);
-                    $item->headerContent.= $com->getContent()->headerContent;
-
-                } else {
-
-
-                    $item->bodyContent.= $com->getContent()->bodyContent;
-                    //$html .= $com->getContent();
-
-                }
-
-            }*/
-
-
-/*
-            if ($this->tagName !== null) {
-                if ($this->renderClosingTag) {
-                    //$html .= $this->getClosingTag();
-                    $item->bodyContent.= $this->getClosingTag();
-                }
-            }
-
-            if ($this->returnOneLine) {
-                //$html = str_replace(PHP_EOL, '', $html);
-                $item->bodyContent=str_replace(PHP_EOL, '', $item->bodyContent);
-            }
-
-            //$html .= PHP_EOL;
-            $item->bodyContent.=PHP_EOL;
-
-        }
-
-        return $item;*/
-        //return $html;
-
-
-        //return parent::getContent();
-
 
     }
 
@@ -190,8 +85,6 @@ abstract class AbstractHtmlContainer extends AbstractTagContainer
         }
 
         parent::addContent($text);
-
-        //$this->content .= $text ;
 
         return $this;
 
