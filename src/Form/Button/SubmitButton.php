@@ -41,7 +41,6 @@ class SubmitButton extends Button
     }
 
 
-    // for what ???
     public function getValue()
     {
 
