@@ -3,8 +3,7 @@
 namespace Nemundo\Html\Listing;
 
 
-// OrderedList
-class Ol extends AbstractListContainer
+class OrderedList extends AbstractListContainer
 {
 
     public function getContent()

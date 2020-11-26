@@ -16,7 +16,7 @@ $li->content = 'Li1';
 $li = new \Nemundo\Html\Listing\Li($ul);
 $li->content = 'Li2';
 
-$ol = new \Nemundo\Html\Listing\Ol($html);
+$ol = new \Nemundo\Html\Listing\OrderedList($html);
 
 $li = new \Nemundo\Html\Listing\Li($ol);
 $li->content = 'Li1';
