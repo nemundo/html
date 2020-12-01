@@ -126,7 +126,7 @@ abstract class AbstractTagContainer extends AbstractContainer
         }
 
         if ($this->returnOneLine) {
-            $html = str_replace(PHP_EOL, '', $html);
+            //$html = str_replace(PHP_EOL, '', $html);
         }
 
         $html .= PHP_EOL;

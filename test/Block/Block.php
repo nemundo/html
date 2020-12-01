@@ -12,7 +12,5 @@ new \Nemundo\Html\Block\Hr($html);
 
 new \Nemundo\Html\Block\Br($html);
 
-
-
 $html->render();
 

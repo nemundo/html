@@ -16,7 +16,6 @@ $input->inputType = \Nemundo\Html\Form\Input\InputType::PASSWORD;
 //$input->placeholder = 'Input 1';
 
 
-
 $submit = new \Nemundo\Html\Form\Button\SubmitButton($form);
 $submit->label = 'Send';
 
