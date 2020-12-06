@@ -75,16 +75,12 @@ class HtmlDocument extends AbstractDocument
         $library = new LibraryHeader();
 
         $head = new Head($html);
-        $head->content = $library->getContent()->headerContent . $htmlItem->headerContent;
+        $head->addContent( $library->getContent()->headerContent . $htmlItem->headerContent);
 
         $body = new Body($html);
-        $body->content = PHP_EOL. $htmlItem->bodyContent;
+        $body->addContent(PHP_EOL. $htmlItem->bodyContent);
 
-        //echo $body->content;
-        //exit;
-
-
-        $html = '<!DOCTYPE html>' . PHP_EOL . $html->getBodyContent();  //getContent()->bodyContent;
+        $html = '<!DOCTYPE html>' . PHP_EOL . $html->getBodyContent();
 
         return $html;
 

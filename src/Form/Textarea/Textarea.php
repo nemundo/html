@@ -43,7 +43,7 @@ class Textarea extends AbstractFormItem
     {
 
         $this->tagName = 'textarea';
-        $this->returnOneLine = false;
+        $this->returnOneLine = true;
 
         $this->addAttribute('rows', $this->rows);
         $this->addAttribute('cols', $this->cols);

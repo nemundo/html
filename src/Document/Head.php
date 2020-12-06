@@ -3,10 +3,9 @@
 namespace Nemundo\Html\Document;
 
 
-use Nemundo\Html\Container\AbstractContentContainer;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
-class Head extends AbstractContentContainer  //HtmlConContainer
+class Head extends AbstractHtmlContainer
 {
 
     public function getContent()
@@ -15,5 +14,10 @@ class Head extends AbstractContentContainer  //HtmlConContainer
         return parent::getContent();
     }
 
+
+    public function addContent($content)
+    {
+        return parent::addContent($content);
+    }
 
 }
