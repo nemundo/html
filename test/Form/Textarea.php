@@ -13,6 +13,9 @@ $textarea->value = '123123';
 $html = new \Nemundo\Html\Document\HtmlDocument();
 
 $textarea = new \Nemundo\Html\Form\Textarea\Textarea($html);
-//$textarea->value = '123123';
+$textarea->cols=10;
+$textarea->rows=10;
+
+$textarea->value = 'line1'.PHP_EOL.'line2';
 
 $html->render();

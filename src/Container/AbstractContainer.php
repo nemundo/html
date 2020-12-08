@@ -95,7 +95,9 @@ abstract class AbstractContainer extends AbstractBaseClass
 
         $item = new HtmlContainerItem();
 
-        $item->bodyContent .= $this->content . PHP_EOL;
+        $item->bodyContent .= $this->content;  // . PHP_EOL;
+
+
 
         foreach ($this->getContainerList() as $com) {
             $childItem = $com->getContent();
@@ -103,7 +105,7 @@ abstract class AbstractContainer extends AbstractBaseClass
             $item->bodyContent .= $childItem->bodyContent . PHP_EOL;
         }
 
-        $item->bodyContent .= PHP_EOL;
+        //$item->bodyContent .= PHP_EOL;
 
         return $item;
 
@@ -113,7 +115,7 @@ abstract class AbstractContainer extends AbstractBaseClass
     protected function addContent($content)
     {
 
-        $this->content .= $content . PHP_EOL;
+        $this->content .= $content;  // . PHP_EOL;
         return $this;
 
     }

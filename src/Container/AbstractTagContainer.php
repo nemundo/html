@@ -89,7 +89,9 @@ abstract class AbstractTagContainer extends AbstractContainer
 
         $html = '<' . $this->tagName . $this->getAttribute() . $closing;
 
+        if (!$this->returnOneLine) {
         $html .= PHP_EOL;
+        }
 
         return $html;
 
@@ -99,7 +101,12 @@ abstract class AbstractTagContainer extends AbstractContainer
     protected function getClosingTag()
     {
 
-        $html = '</' . $this->tagName . '>' . PHP_EOL;
+        $html = '</' . $this->tagName . '>';  // . PHP_EOL;
+
+        if (!$this->returnOneLine) {
+            $html .= PHP_EOL;
+        }
+
         return $html;
 
     }
@@ -125,11 +132,15 @@ abstract class AbstractTagContainer extends AbstractContainer
             }
         }
 
-        if ($this->returnOneLine) {
+        /*if ($this->returnOneLine) {
             $html = str_replace(PHP_EOL, '', $html);
+        }*/
+
+        //$html .= PHP_EOL;
+        if (!$this->returnOneLine) {
+            $html .= PHP_EOL;
         }
 
-        $html .= PHP_EOL;
 
         $item = new HtmlContainerItem();
 
