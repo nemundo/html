@@ -92,20 +92,14 @@ abstract class AbstractContainer extends AbstractBaseClass
     public function getContent()
     {
 
-
         $item = new HtmlContainerItem();
-
-        $item->bodyContent .= $this->content;  // . PHP_EOL;
-
-
+        $item->bodyContent .= $this->content;
 
         foreach ($this->getContainerList() as $com) {
             $childItem = $com->getContent();
             $item->headerContent .= $childItem->headerContent . PHP_EOL;
             $item->bodyContent .= $childItem->bodyContent . PHP_EOL;
         }
-
-        //$item->bodyContent .= PHP_EOL;
 
         return $item;
 
