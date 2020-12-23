@@ -12,6 +12,10 @@ class Html extends AbstractHtmlContainer
     {
 
         $this->tagName = 'html';
+
+        //translate="no"
+        $this->addAttribute('translate','no');
+
         return parent::getContent();
 
     }

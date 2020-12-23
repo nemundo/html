@@ -23,6 +23,10 @@ abstract class AbstractHyperlink extends AbstractContentContainer
      */
     protected $tabindex;
 
+    /**
+     * @var bool
+     */
+    public $download = false;
 
     public function getContent()
     {
@@ -33,6 +37,10 @@ abstract class AbstractHyperlink extends AbstractContentContainer
         $this->addAttribute('href', $this->href);
         $this->addAttribute('target', $this->target);
         $this->addAttribute('tabindex', $this->tabindex);
+
+        if ($this->download) {
+            $this->addAttributeWithoutValue('download');
+        }
 
         return parent::getContent();
 
