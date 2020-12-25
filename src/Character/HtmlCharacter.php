@@ -14,7 +14,6 @@ class HtmlCharacter
 
     const DOUBLE_ARROW_RIGHT = '&rArr;';
 
-
-
+    const AMPERSAND = '&amp;';
 
 }
