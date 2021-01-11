@@ -1,12 +1,12 @@
 <?php
 
-namespace Nemundo\Html\Multimedia;
+namespace Nemundo\Html\Player;
 
 
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
 
-class Video extends AbstractHtmlContainer
+class VideoPlayer extends AbstractHtmlContainer
 {
 
     /**

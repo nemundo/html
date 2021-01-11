@@ -1,15 +1,12 @@
 <?php
 
-namespace Nemundo\Html\Multimedia;
+namespace Nemundo\Html\Player;
 
 
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
 
-
-// AudioPlayer
-// Nemundo\Html\Player
-class Audio extends AbstractHtmlContainer
+class AudioPlayer extends AbstractHtmlContainer
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Nemundo\Html\Multimedia;
+namespace Nemundo\Html\Player;
 
 
 use Nemundo\Html\Container\AbstractHtmlContainer;
