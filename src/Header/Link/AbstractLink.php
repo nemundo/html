@@ -1,34 +1,39 @@
 <?php
 
-namespace Nemundo\Html\Header;
+namespace Nemundo\Html\Header\Link;
 
 
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
-class AbstractLink extends AbstractHtmlContainer
+abstract class AbstractLink extends AbstractHtmlContainer
 {
 
     /**
-     * @var
+     * @var string
      */
     public $href;
 
+    /**
+     * @var string
+     */
     public $media;
 
+    /**
+     * @var string
+     */
+    protected $rel;
 
     public function getContent()
     {
 
         $this->tagName = 'link';
         $this->renderClosingTag = false;
-        $this->addAttribute('rel', 'stylesheet');
+        $this->addAttribute('rel', $this->rel);
         $this->addAttribute('href', $this->href);
-
-        if ($this->media !== null) {
-            $this->addAttribute('media', $this->media);
-        }
+        $this->addAttribute('media', $this->media);
 
         return parent::getContent();
+
     }
 
 }
