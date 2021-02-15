@@ -4,15 +4,15 @@
 namespace Nemundo\Html\Form\Input;
 
 
-use Nemundo\Html\Container\AbstractContainer;
-
 class TimeInput extends AbstractInput
 {
 
-    public function __construct(AbstractContainer $parentContainer = null)
+    public function getContent()
     {
-        parent::__construct($parentContainer);
+
         $this->addAttribute('type', 'time');
+        return parent::getContent();
+
     }
 
 }

@@ -11,6 +11,8 @@ $input->value = '123123';
 $input->placeholder = 'search';
 
 
+$input = new \Nemundo\Html\Form\Input\TimeInput($html);
+
 
 $html->render();
 
