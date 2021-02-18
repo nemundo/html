@@ -14,12 +14,12 @@ class Iframe extends AbstractHtmlContainer
     public $src;
 
     /**
-     * @var int
+     * @var string
      */
     public $width;
 
     /**
-     * @var int
+     * @var string
      */
     public $height;
 
