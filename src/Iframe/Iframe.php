@@ -42,4 +42,10 @@ class Iframe extends AbstractHtmlContainer
 
     }
 
+
+    public function addAttributeWithoutValue($attribute)
+    {
+        parent::addAttributeWithoutValue($attribute);
+    }
+
 }
