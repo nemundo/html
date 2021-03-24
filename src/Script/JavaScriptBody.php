@@ -4,10 +4,9 @@ namespace Nemundo\Html\Script;
 
 
 use Nemundo\Html\Container\AbstractHtmlContainer;
-use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
 
-class JavaScript extends AbstractHeaderHtmlContainer // AbstractHtmlContainer
+class JavaScriptBody extends AbstractHtmlContainer
 {
 
     /**
@@ -15,13 +14,9 @@ class JavaScript extends AbstractHeaderHtmlContainer // AbstractHtmlContainer
      */
     public $src;
 
-
-    // addLine
-    // addHtml
-    public function addCodeLine($line)
+    public function addContent($content)
     {
-        $this->addContent($line);
-        return $this;
+        return parent::addContent($content);
     }
 
 

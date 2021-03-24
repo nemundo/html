@@ -17,6 +17,15 @@ $input->name = 'input1';
 $input->placeholder = 'Input 1';
 $input->value = 'hello world';
 
+$input = new \Nemundo\Html\Form\Input\NumberInput($form);
+$input->name = 'input1';
+//$input->placeholder = 'Input 1';
+$input->value = '5';
+$input->min= 3;
+$input->max=6;
+
+
+
 $select = new \Nemundo\Html\Form\Select\Select($form);
 
 $option = new \Nemundo\Html\Form\Select\Option($select);
