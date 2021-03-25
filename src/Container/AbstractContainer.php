@@ -97,8 +97,8 @@ abstract class AbstractContainer extends AbstractBaseClass
 
         foreach ($this->getContainerList() as $com) {
             $childItem = $com->getContent();
-            $item->headerContent .= $childItem->headerContent;  // . PHP_EOL;
-            $item->bodyContent .= $childItem->bodyContent; // . PHP_EOL;
+            $item->headerContent .= $childItem->headerContent;
+            $item->bodyContent .= $childItem->bodyContent;
         }
 
         return $item;
@@ -109,7 +109,7 @@ abstract class AbstractContainer extends AbstractBaseClass
     protected function addContent($content)
     {
 
-        $this->content .= $content;  // . PHP_EOL;
+        $this->content .= $content;
         return $this;
 
     }

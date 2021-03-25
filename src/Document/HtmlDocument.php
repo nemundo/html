@@ -16,7 +16,7 @@ class HtmlDocument extends AbstractDocument
     /**
      * @var string
      */
-    public $title;
+    //public $title;
     // pageTitle
     // headerTitle
 
@@ -24,7 +24,7 @@ class HtmlDocument extends AbstractDocument
     /**
      * @var JavaScript
      */
-    protected $script;
+    //protected $script;
 
 
     public function __construct()
@@ -54,8 +54,8 @@ class HtmlDocument extends AbstractDocument
     public function getContent()
     {
 
-        $title = new Title($this);
-        $title->content = $this->title;
+        /*$title = new Title($this);
+        $title->content = $this->title;*/
 
         $meta = new Meta($this);
         $meta->addAttribute('charset', 'UTF-8');
@@ -70,12 +70,13 @@ class HtmlDocument extends AbstractDocument
 
         $html = new Html();
 
-
-
-
         $htmlItem = $this->getContent();
 
         $library = new LibraryHeader();
+
+        $title = new Title($library);
+        $title->content = LibraryHeader::$documentTitle;  // $this->title;*/
+
 
         $head = new Head($html);
         $head->addContent( $library->getContent()->headerContent . $htmlItem->headerContent);

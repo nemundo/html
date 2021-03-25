@@ -8,8 +8,17 @@ use Nemundo\Html\Header\Link\StylesheetLink;
 use Nemundo\Html\Script\JavaScript;
 
 
+// ResponseHeader
+// DocumentHeader
 class LibraryHeader extends AbstractHeaderHtmlContainer  // AbstractHtmlContainer
 {
+
+    public static $documentTitle;
+
+    public static $documentDescription;
+
+    public static $documentImage;
+
 
     private static $jsUrlList = [];
 
@@ -72,6 +81,14 @@ class LibraryHeader extends AbstractHeaderHtmlContainer  // AbstractHtmlContaine
 
     public function getContent()
     {
+
+
+        $title = new Title($this);
+        $title->content = $this->title;
+
+
+        //og
+
 
         LibraryHeader::$jsUrlList = array_unique(LibraryHeader::$jsUrlList);
         foreach (LibraryHeader::$jsUrlList as $filename) {
