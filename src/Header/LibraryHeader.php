@@ -17,7 +17,7 @@ class LibraryHeader extends AbstractHeaderHtmlContainer  // AbstractHtmlContaine
 
     public static $documentDescription;
 
-    public static $documentImage;
+    //public static $documentImage;
 
 
     private static $jsUrlList = [];
@@ -64,7 +64,7 @@ class LibraryHeader extends AbstractHeaderHtmlContainer  // AbstractHtmlContaine
     }
 
 
-    /*
+
     public static function addHeaderContainer(AbstractHtmlContainer $container)
     {
 
@@ -73,7 +73,7 @@ class LibraryHeader extends AbstractHeaderHtmlContainer  // AbstractHtmlContaine
 
     }
 
-
+/*
     public function getHeaderContainerList() {
         return LibraryHeader::$headerContainerList;
     }*/
@@ -118,10 +118,10 @@ class LibraryHeader extends AbstractHeaderHtmlContainer  // AbstractHtmlContaine
         }
 
 
-        /*
+
         foreach (LibraryHeader::$headerContainerList as $container) {
             $this->addContainer($container);
-        }*/
+        }
 
         return parent::getContent();
 

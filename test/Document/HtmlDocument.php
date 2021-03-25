@@ -8,6 +8,11 @@ $html = new \Nemundo\Html\Document\HtmlDocument();
 
 \Nemundo\Html\Header\LibraryHeader::$documentTitle = 'Document Example';
 
+
+
+
+
+
 /*$title=new \Nemundo\Html\Header\Title($html);
 $title->content='Document Example';*/
 
@@ -20,6 +25,15 @@ $p->content = 'Lorem ..';
 
 
 //(new \Nemundo\Core\Debug\Debug())->write($html->getHtml());
+
+
+$p=new \Nemundo\Html\Paragraph\Paragraph();
+$p->content = 'hhhhhhhhhhhhhh';
+\Nemundo\Html\Header\LibraryHeader::addHeaderContainer($p);
+
+$meta = new \Nemundo\Html\Header\Meta\Meta();
+$meta->addAttribute('value','123123123123');
+\Nemundo\Html\Header\LibraryHeader::addHeaderContainer($meta);
 
 
 $html->render();
