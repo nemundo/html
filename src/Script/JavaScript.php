@@ -3,11 +3,10 @@
 namespace Nemundo\Html\Script;
 
 
-use Nemundo\Html\Container\AbstractHtmlContainer;
 use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
 
-class JavaScript extends AbstractHeaderHtmlContainer // AbstractHtmlContainer
+class JavaScript extends AbstractHeaderHtmlContainer
 {
 
     /**

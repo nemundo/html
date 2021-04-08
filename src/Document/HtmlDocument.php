@@ -33,7 +33,7 @@ class HtmlDocument extends AbstractDocument
     }
 
 
-    public function addCssUrl($url)
+   /* public function addCssUrl($url)
     {
 
         LibraryHeader::addCssUrl($url);
@@ -48,7 +48,7 @@ class HtmlDocument extends AbstractDocument
         LibraryHeader::addJsUrl($url);
         return $this;
 
-    }
+    }*/
 
 
     public function getContent()

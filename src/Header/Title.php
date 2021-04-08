@@ -3,10 +3,7 @@
 namespace Nemundo\Html\Header;
 
 
-use Nemundo\Html\Container\AbstractContentContainer;
-
-
-class Title extends AbstractContentHeaderContainer  // AbstractContentContainer
+class Title extends AbstractContentHeaderContainer
 {
 
     public function getContent()

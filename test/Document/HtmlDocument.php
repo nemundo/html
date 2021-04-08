@@ -9,10 +9,6 @@ $html = new \Nemundo\Html\Document\HtmlDocument();
 \Nemundo\Html\Header\LibraryHeader::$documentTitle = 'Document Example';
 
 
-
-
-
-
 /*$title=new \Nemundo\Html\Header\Title($html);
 $title->content='Document Example';*/
 
@@ -23,17 +19,20 @@ $h1->content = 'Hello World!';
 $p = new \Nemundo\Html\Paragraph\Paragraph($html);
 $p->content = 'Lorem ..';
 
-
-//(new \Nemundo\Core\Debug\Debug())->write($html->getHtml());
-
-
-$p=new \Nemundo\Html\Paragraph\Paragraph();
+$p=new \Nemundo\Html\Paragraph\Paragraph($html);
 $p->content = 'hhhhhhhhhhhhhh';
-\Nemundo\Html\Header\LibraryHeader::addHeaderContainer($p);
+//\Nemundo\Html\Header\LibraryHeader::addHeaderContainer($p);
 
-$meta = new \Nemundo\Html\Header\Meta\Meta();
-$meta->addAttribute('value','123123123123');
-\Nemundo\Html\Header\LibraryHeader::addHeaderContainer($meta);
+//$meta = new \Nemundo\Html\Header\Meta\Meta();
+//$meta->addAttribute('value','123123123123');
+//\Nemundo\Html\Header\LibraryHeader::addHeaderContainer($meta);
+
+
+$meta = new \Nemundo\Html\Header\Meta\ThemeColorMeta($html);
+$meta->color='#C05B45';
+
+
+
 
 
 $html->render();

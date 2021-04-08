@@ -4,7 +4,6 @@ namespace Nemundo\Html\Header;
 
 
 use Nemundo\Core\Language\Translation;
-use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
 class AbstractContentHeaderContainer extends AbstractHeaderHtmlContainer
 {

@@ -3,10 +3,6 @@
 namespace Nemundo\Html\Header;
 
 
-use Nemundo\Html\Container\AbstractHtmlContainer;
-use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
-
-
 class JavaScriptHeaderCode extends AbstractHeaderHtmlContainer
 {
 
@@ -14,7 +10,6 @@ class JavaScriptHeaderCode extends AbstractHeaderHtmlContainer
      * @var string
      */
     //public $src;
-
 
 
     // addLine
