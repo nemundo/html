@@ -2,7 +2,7 @@
 
 require '../config.php';
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 
 $fav = new \Nemundo\Html\Header\Favicon($html);
 

@@ -3,7 +3,6 @@
 namespace Nemundo\Html\Header\Meta;
 
 
-use Nemundo\Html\Container\AbstractTagContainer;
 use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
 abstract class AbstractMeta extends AbstractHeaderHtmlContainer  // AbstractTagContainer  // AbstractHeaderHtmlContainer

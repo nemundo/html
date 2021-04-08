@@ -5,7 +5,7 @@ namespace Nemundo\Html\Script;
 
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
-
+// BodyJavaScript
 class JavaScriptBody extends AbstractHtmlContainer
 {
 

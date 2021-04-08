@@ -18,4 +18,10 @@ class Html extends AbstractHtmlContainer
 
     }
 
+
+    public function addAttribute($attribute, $value)
+    {
+        parent::addAttribute($attribute, $value);
+    }
+
 }

@@ -10,7 +10,7 @@ $textarea->value = '123123';
 */
 
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 
 $textarea = new \Nemundo\Html\Form\Textarea\Textarea($html);
 $textarea->cols=10;

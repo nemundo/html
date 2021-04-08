@@ -3,8 +3,7 @@
 require '../../vendor/autoload.php';
 
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
-$html->title = 'Table Example';
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 
 $table = new \Nemundo\Html\Table\Table($html);
 $table->border = 1;

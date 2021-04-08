@@ -3,7 +3,7 @@
 require '../../vendor/autoload.php';
 
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 
 $radio = new \Nemundo\Html\Form\Input\RadioInput($html);
 

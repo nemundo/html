@@ -1,7 +1,9 @@
 <?php
 
-namespace Nemundo\Html\Header;
+namespace Nemundo\Html\Header\Link;
 
+
+use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
 class Favicon extends AbstractHeaderHtmlContainer
 {

@@ -1,20 +1,19 @@
 <?php
 
-namespace Nemundo\Html\Header;
+namespace Nemundo\Html\Script;
 
 
-class JavaScriptHeaderCode extends AbstractHeaderHtmlContainer
+use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
+
+
+class AbstractJavaScriptCode extends AbstractHeaderHtmlContainer
 {
-
-    /**
-     * @var string
-     */
-    //public $src;
 
 
     // addLine
     // addHtml
-    public function addCodeLine($line)
+    // addCode
+    protected function addCodeLine($line)
     {
         $this->addContent($line);
         return $this;
@@ -26,7 +25,6 @@ class JavaScriptHeaderCode extends AbstractHeaderHtmlContainer
 
         $this->tagName = 'script';
         $this->addAttribute('type', 'text/javascript');
-        //$this->addAttribute('src', $this->src);
 
         return parent::getContent();
 

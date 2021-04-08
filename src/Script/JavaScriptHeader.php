@@ -1,6 +1,6 @@
 <?php
 
-namespace Nemundo\Html\Header;
+namespace Nemundo\Html\Script;
 
 
 use Nemundo\Html\Container\AbstractHtmlContainer;

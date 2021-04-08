@@ -1,12 +1,15 @@
 <?php
 
-require '../config.php';
+require __DIR__.'/../config.php';
 
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 //$html->title = 'Document Example';
 
-\Nemundo\Html\Header\LibraryHeader::$documentTitle = 'Document Example';
+//$html->html->addAttribute('lang','de');
+
+
+//\Nemundo\Html\Header\LibraryHeader::$documentTitle = 'Document Example';
 
 
 /*$title=new \Nemundo\Html\Header\Title($html);
@@ -31,10 +34,17 @@ $p->content = 'hhhhhhhhhhhhhh';
 $meta = new \Nemundo\Html\Header\Meta\ThemeColorMeta($html);
 $meta->color='#C05B45';
 
-
-
-
+$title=new \Nemundo\Html\Header\Title($html);
+$title->content='hello world';
 
 $html->render();
+
+
+$file=new \Nemundo\Core\TextFile\Writer\TextFileWriter('c:/test/htmldocument.html');
+$file->overwriteExistingFile=true;
+$file->addLine($html->getHtml());
+$file->saveFile();
+
+
 
 

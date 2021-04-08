@@ -2,7 +2,7 @@
 
 require '../config.php';
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 $html->title = 'Title Example';
 
 $h1 = new \Nemundo\Html\Heading\H1($html);

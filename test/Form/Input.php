@@ -3,7 +3,7 @@
 require '../config.php';
 
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 
 
 $input = new \Nemundo\Html\Form\Input\TextInput($html);

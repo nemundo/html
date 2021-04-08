@@ -3,7 +3,7 @@
 require '../config.php';
 
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 
 
 $div = new \Nemundo\Html\Block\Div($html);

@@ -2,7 +2,7 @@
 
 require '../config.php';
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 
 $meta=new \Nemundo\Html\Header\Meta\DescriptionMeta($html);
 $meta->description = 'hello world page';

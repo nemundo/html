@@ -4,7 +4,7 @@
 require '../config.php';
 
 
-$html = new \Nemundo\Html\Document\HtmlDocument();
+$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
 $html->title = 'Image Example';
 
 $image = new \Nemundo\Html\Image\Img($html);

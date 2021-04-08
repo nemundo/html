@@ -5,7 +5,6 @@ require '../config.php';
 
 
 $html = new \Nemundo\Html\Document\HtmlDocument();
-$html->title = 'Hyperlink Example';
 
 $hyperlink = new \Nemundo\Html\Hyperlink\Hyperlink($html);
 $hyperlink->content = 'Spiegel';
