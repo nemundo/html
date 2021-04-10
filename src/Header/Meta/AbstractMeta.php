@@ -5,7 +5,7 @@ namespace Nemundo\Html\Header\Meta;
 
 use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
-abstract class AbstractMeta extends AbstractHeaderHtmlContainer  // AbstractTagContainer  // AbstractHeaderHtmlContainer
+abstract class AbstractMeta extends AbstractHeaderHtmlContainer
 {
 
     protected $name;
@@ -20,7 +20,6 @@ abstract class AbstractMeta extends AbstractHeaderHtmlContainer  // AbstractTagC
 
         $this->addAttribute('name', $this->name);
         $this->addAttribute('content', $this->content);
-
 
         return parent::getContent();
 

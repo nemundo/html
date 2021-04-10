@@ -3,7 +3,22 @@
 require __DIR__.'/../config.php';
 
 
-$html = new \Nemundo\Html\Document\AbstractHtmlDocument();
+$html = new \Nemundo\Html\Document\HtmlDocument();
+
+
+$faveicon=new \Nemundo\Html\Header\Link\FaviconLink($html);
+
+$meta=new \Nemundo\Html\Header\Meta\DescriptionMeta($html);
+$meta->description = 'hello world page';
+
+$script=new \Nemundo\Html\Script\JavaScript($html);
+$script->src='script.js';
+
+$stylesheet=new \Nemundo\Html\Header\Link\StylesheetLink($html);
+$stylesheet->href='style.css';
+
+
+
 //$html->title = 'Document Example';
 
 //$html->html->addAttribute('lang','de');
@@ -40,11 +55,12 @@ $title->content='hello world';
 $html->render();
 
 
+/*
 $file=new \Nemundo\Core\TextFile\Writer\TextFileWriter('c:/test/htmldocument.html');
 $file->overwriteExistingFile=true;
 $file->addLine($html->getHtml());
 $file->saveFile();
-
+*/
 
 
 

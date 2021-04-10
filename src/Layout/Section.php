@@ -1,11 +1,11 @@
 <?php
 
-namespace Nemundo\Com\Html\Structure;
+namespace Nemundo\Html\Layout;
 
 
-use Nemundo\Html\Container\AbstractContentContainer;
+use Nemundo\Html\Container\AbstractHtmlContainer;
 
-class Section extends AbstractContentContainer
+class Section extends AbstractHtmlContainer
 {
 
     public function getContent()

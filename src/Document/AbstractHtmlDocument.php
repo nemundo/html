@@ -6,7 +6,7 @@ use Nemundo\Core\Http\Response\ContentType;
 use Nemundo\Core\Http\Response\HttpResponse;
 
 
-class AbstractHtmlDocument extends AbstractDocument
+abstract class AbstractHtmlDocument extends AbstractDocument
 {
 
     /**
@@ -26,14 +26,8 @@ class AbstractHtmlDocument extends AbstractDocument
 
     public function __construct()
     {
-        parent::__construct(null);
-    }
+        parent::__construct();
 
-
-    protected function loadContainer()
-    {
-
-        parent::loadContainer();
         $this->html = new Html();
         $this->head = new Head($this->html);
         $this->body = new Body($this->html);
@@ -66,9 +60,5 @@ class AbstractHtmlDocument extends AbstractDocument
         $response->sendResponse();
 
     }
-
-
-    // writeFile($filename)
-
 
 }

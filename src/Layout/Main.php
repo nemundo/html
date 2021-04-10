@@ -6,12 +6,12 @@ namespace Nemundo\Html\Layout;
 use Nemundo\Html\Container\AbstractHtmlContainer;
 
 
-class Header extends AbstractHtmlContainer
+class Main extends AbstractHtmlContainer
 {
 
     public function getContent()
     {
-        $this->tagName = 'header';
+        $this->tagName = 'main';
         return parent::getContent();
     }
 
