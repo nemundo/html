@@ -4,8 +4,9 @@ namespace Nemundo\Html\Header\Link;
 
 
 use Nemundo\Html\Container\AbstractHtmlContainer;
+use Nemundo\Html\Header\AbstractHeaderHtmlContainer;
 
-abstract class AbstractLink extends AbstractHtmlContainer
+abstract class AbstractLink extends AbstractHeaderHtmlContainer // AbstractHtmlContainer
 {
 
     /**
