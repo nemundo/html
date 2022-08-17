@@ -1,9 +1,1 @@
-<?php
-
-namespace Nemundo\Html\Table;
-
-
-class Tfoot
-{
-
-}
+<?phpnamespace Nemundo\Html\Table;class Tfoot{}

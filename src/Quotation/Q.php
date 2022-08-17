@@ -1,9 +1,1 @@
-<?php
-
-namespace Nemundo\Html\Typography;
-
-
-class Q
-{
-
-}
+<?phpnamespace Nemundo\Html\Typography;class Q{}

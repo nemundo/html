@@ -1,9 +1,1 @@
-<?php
-
-namespace Nemundo\Html\Form\Input;
-
-
-class ResetInput
-{
-
-}
+<?phpnamespace Nemundo\Html\Form\Input;class ResetInput{}
