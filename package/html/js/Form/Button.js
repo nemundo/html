@@ -4,8 +4,7 @@ export default class ButtonContainer extends FormBaseContainer {
 
     constructor(parentContainer) {
         super("button", parentContainer);
-         //this._htmlElement.type = "button";
-         this.type = "button";
+        this.type = "button";
     }
 
 
