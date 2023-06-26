@@ -8,14 +8,17 @@ use Nemundo\Html\Script\JavaScriptType;
 class ModuleJavaScript extends AbstractJavaScript
 {
 
-  public function getContent()
-  {
 
-      $this->type = 'module';  // JavaScriptType::MODULE;
-      $this->defer = true;
+    public $src;
 
-      return parent::getContent();
+    public function getContent()
+    {
 
-  }
+        $this->type = 'module';  // JavaScriptType::MODULE;
+        $this->defer = true;
+
+        return parent::getContent();
+
+    }
 
 }
