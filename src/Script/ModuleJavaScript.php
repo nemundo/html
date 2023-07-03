@@ -14,7 +14,7 @@ class ModuleJavaScript extends AbstractJavaScript
     public function getContent()
     {
 
-        $this->type = 'module';  // JavaScriptType::MODULE;
+        $this->type = 'module';
         $this->defer = true;
 
         return parent::getContent();
