@@ -1,6 +1,12 @@
 export default class WebConfig {
 
-    //static webUrl = '/web/';
-    static webUrl = '/';   // '[no config]';
+    static webUrl = '/';
+
+
+    static loadCurrentWeb() {
+
+        WebConfig.webUrl = (new URL(import.meta.url)).origin;
+
+    }
 
 }
