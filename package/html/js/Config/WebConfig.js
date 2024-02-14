@@ -5,7 +5,7 @@ export default class WebConfig {
 
     static loadCurrentWeb() {
 
-        WebConfig.webUrl = (new URL(import.meta.url)).origin;
+        WebConfig.webUrl = (new URL(import.meta.url)).origin + "/";
 
     }
 
