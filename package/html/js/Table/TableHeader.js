@@ -1,6 +1,5 @@
 import BaseContainer from "../Base/Base.js";
 import ThContainer from "./Th.js";
-import TextAlignment from "../Style/Text/TextAlignment.js";
 import HyperlinkContainer from "../Hyperlink/Hyperlink.js";
 
 export default class TableHeader extends BaseContainer {
@@ -15,37 +14,25 @@ export default class TableHeader extends BaseContainer {
 
         let th = new ThContainer(this);
         th.text = text;
-        //th.heightPixel = 15;
-        //th.textAlignment = TextAlignment.LEFT;
-        //th.paddingPixel=5;
+
+        return this;
 
     }
 
-    /*addContainer(container) {
-        return super.addContainer(container);
 
-
-    }*/
-
-
-    addSortingText(text,sorting) {
+    addSortingText(text, sorting) {
 
         let th = new ThContainer(this);
-        //th.text = text;
-        //th.heightPixel = 15;
-        //th.textAlignment = TextAlignment.LEFT;
-        //th.paddingPixel=5;
 
         let hyperlink = new HyperlinkContainer(header);
         hyperlink.text = text;
-        hyperlink.onClick=function () {
-            local.sorting= sorting;
+        hyperlink.onClick = function () {
+            local.sorting = sorting;
             local.reloadData();
         };
 
 
     }
-
 
 
     addEmpty() {

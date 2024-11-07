@@ -9,7 +9,6 @@ export default class TrContainer extends BaseContainer {
 
     }
 
-
     addData(name, value) {
 
         this._htmlElement.dataset[name] = value;
