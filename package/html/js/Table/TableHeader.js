@@ -38,6 +38,7 @@ export default class TableHeader extends BaseContainer {
     addEmpty() {
 
         this.addText("");
+        return this;
 
     }
 

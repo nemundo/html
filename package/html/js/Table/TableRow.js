@@ -9,11 +9,14 @@ export default class TableRow extends TrContainer {
         td.text = text;
         td.nowrap = nowrap;
 
+        return this;
+
     }
 
 
     addEmpty() {
         this.addText("&nbsp;");
+        return this;
     }
 
 
