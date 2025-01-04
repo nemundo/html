@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Html\Header\Meta;class RefreshMeta extends AbstractMeta{    public $refreshTime;    public function getContent()    {        $this->addAttribute('http-equiv','refresh');        $this->content = $this->refreshTime;        return parent::getContent();    }}
